@@ -404,7 +404,7 @@
 				<div class="right_side">
 					<h4>Stock Alerts</h4>
 					<p>No Need to Keep Checking - We Will Let you Know!</p>
-					<a href="/shop" class="button button-two">Shop Now</a>
+					<a href="/shop" class="button button-two">Shop Now</a> 
 				</div>
 			</div>
 		</div>
