@@ -1,0 +1,65 @@
+.contact_wrapper {
+    .main_section {
+        width: 100%;
+        padding: 3rem 0;
+
+        .section_inner {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            h1 {
+                width: 100%;
+                font-size: 1.6rem;
+                text-align: center;
+                margin: 0 0 3rem;
+            }
+
+            .left_side {
+                width: 48%;
+
+                @media (max-width: 991px) {
+                    width: 100%;
+                }
+            }
+
+            .right_side {
+                width: 48%;
+
+                @media (max-width: 991px) {
+                    width: 100%;
+                    margin-top: 2rem;
+                }
+
+                .wpforms-container {
+                    width: 100%;
+                    margin: 0;
+
+                    form {
+                        width: 100%;
+
+                        .wpforms-field {
+                            .wpforms-field-row {
+                                width: 100%;
+                                max-width: unset;
+                            }
+
+                            input[type=text], input[type=email], textarea {
+                                width: 100%;
+                                max-width: unset;
+                                font-size: 1rem;
+                                font-weight: 400;
+                                background: #ededed;
+                                border: none;
+                                padding: 1.5rem;
+                                border-radius: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

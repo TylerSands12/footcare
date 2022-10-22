@@ -1,0 +1,26 @@
+header {
+    width: 100%;
+    padding: 0 3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 999;
+    background: #fff;
+
+    >div {
+
+    }
+
+    a.logo {
+        display: inline-block;
+        padding: 1rem 0;
+
+        img {
+            width: 200px;
+            height: auto;
+        }
+    }
+}

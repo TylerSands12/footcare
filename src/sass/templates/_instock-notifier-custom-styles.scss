@@ -1,0 +1,80 @@
+.cwginstock-subscribe-form {
+    width: 30rem;
+    max-width: 100%;
+
+    .row {
+        margin: 0 !important;
+    }
+
+    .col-md-12 {
+        padding: 0 !important;
+    }
+
+    .cwginstocksuccess {
+        margin-top: 1rem;
+        color: $orange !important;
+        font-size: .9rem !important;
+    }
+
+    .panel {
+        border-color: #ededed !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+
+        .panel-heading {
+            background-color: $darkBlue !important;
+            border-radius: 0 !important;
+    
+            h4 {
+                margin: 0 !important;
+                color: $orange !important;
+                text-transform: none !important;
+                font-weight: 700 !important;
+                font-size: 1.1rem !important;
+            }
+        }
+
+        .panel-body {
+            padding: 1.5rem !important;
+
+            .form-group {
+                display: flex !important;
+                flex-direction: row !important;
+                align-items: stretch !important;
+                justify-content: space-between !important;
+                margin: 0 !important;
+                padding: 0 !important;
+    
+                input[type=text], input[type=email] {
+                    width: 48% !important;
+                    border: 1px solid #ededed !important;
+                    padding: .5rem;
+                    border-radius: 0 !important;
+                    text-align: left !important;
+                    margin-bottom: 1.5rem !important;
+                }
+    
+                input.cwgstock_button {
+                    display: inline-block !important;
+                    padding: 1rem 2rem !important;
+                    border: 2px solid !important;
+                    transition: all .3s ease !important;
+                    text-align: center !important;
+                    font-weight: 700 !important;
+                    color: #fff !important;
+                    border-color: $orange !important;
+                    background-color: $orange !important;
+                    border-radius: 0 !important;
+                    outline: 0 !important;
+                    font-size: 1.1rem !important;
+                    cursor: pointer;
+            
+                    &:hover {
+                        color: $orange !important;
+                        background-color: $darkBlue !important;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,207 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    // font: inherit;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+ol li {
+    margin: 1rem 0;
+    list-style-type: decimal;
+}
+
+html {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.owl-carousel {
+   overflow: hidden;
+
+   .owl-stage {
+       overflow: hidden;
+   }
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    min-width: 100%;
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote {
+    background-clip: padding-box;
+    border-radius: 5px;
+    margin: 22px;
+    padding: 0;
+    background-color: $first;
+    position: relative;
+    p {
+        padding: 1rem;
+        color: #FFFFFF !important;
+        margin-bottom: 2rem;
+        text-align: center;
+        font-size: 19px;
+        font-style: italic;
+    }
+}
+
+blockquote:before {
+    border-right: 20px solid transparent !important;
+    border-top: 20px solid;
+    content: "";
+    height: 0;
+    left: 4.5em;
+    position: absolute;
+    top: 100%;
+    border-top-color: $first;
+    width: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+img {
+    height: auto; // Make sure images are scaled correctly. */
+    max-width: 100%; // Adhere to container width. */
+}
+:focus { outline: none; }
+
+ button {
+  &:focus {
+    outline: none!important;
+  }
+  &:active {
+    outline: none!important;
+  }
+}
+
+a,
+a:active,
+a:hover {
+    outline: 0;
+}
+
+::selection {
+    background: $second; // WebKit/Blink Browsers */
+    color: #fff;
+}
+
+::-moz-selection {
+    background: $second; // Gecko Browsers */ 
+    color: #fff;
+}

@@ -1,0 +1,37 @@
+.button-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    display: inline-block !important;
+    padding: 1rem 2rem !important;
+    border: 2px solid !important;
+    transition: all .3s ease !important;
+    text-align: center !important;
+    font-weight: 700 !important;
+
+    &.button-one {
+        color: #fff !important;
+        border-color: $orange !important;
+        background-color: $orange !important;
+
+        &:hover {
+            color: $orange !important;
+            background-color: $darkBlue !important;
+        }
+    }
+
+    &.button-two {
+        color: $orange !important;
+        border-color: $orange !important;
+        background-color: $darkBlue !important;
+
+        &:hover {
+            color: #fff !important;
+            background-color: $orange !important;
+        }
+    }
+}

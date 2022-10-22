@@ -1,0 +1,23 @@
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f6f6f6;
+}
+::-webkit-scrollbar-thumb {
+    background: #5a5a5a;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #2a2a33;
+}
+
+.social-media-icons {
+    display: flex;
+    flex-direction: row;
+
+    a {
+        &:not(:last-child) {
+            margin-right: 1rem;
+        }
+    }
+}

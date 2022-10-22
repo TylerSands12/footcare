@@ -1,0 +1,28 @@
+.carousel {
+    display: flex !important;
+    flex-direction: row !important;
+
+    .slick-list {
+        width: 100%;
+
+        .slide {
+            margin: 0 20px;
+        }
+    }
+
+    svg {
+        width: 1rem;
+        cursor: pointer;
+
+        &:hover {
+            path {
+                fill: #fddc88;
+            }
+        }
+
+        path {
+            fill: $orange;
+            transition: all .4s ease;
+        }
+    }
+}

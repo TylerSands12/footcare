@@ -1,0 +1,12 @@
+/node_modules
+npm-debug.log
+package-lock.json
+yarn.lock
+wp-admin
+wp-includes
+db-data
+secrets
+wp-content/plugins
+wp-content/uploads
+*/.DS_Store
+.DS_Store
