@@ -1,5 +1,3 @@
-TEST
-
 <main class="home_wrapper page_wrapper">
 	
 	<section class="top_banner">
