@@ -396,7 +396,7 @@
 				<p class="subhead">Optional sub heading to follow...</p>
 
 				<div class="left_side">
-					<h4>Mailing List</h4>
+					<h4>Mailing List</h4>   
 					<p>Sign Up and Save 10% on your First Order</p>
 					<?php echo do_shortcode('[wpforms id="180" title="false"]'); ?>
 				</div>
