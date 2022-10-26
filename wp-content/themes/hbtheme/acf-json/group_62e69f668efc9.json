@@ -6,6 +6,7 @@
             "key": "field_62e69f68fbe6c",
             "label": "Facebook",
             "name": "facebook",
+            "aria-label": "",
             "type": "url",
             "instructions": "",
             "required": 0,
@@ -22,6 +23,41 @@
             "key": "field_62e69f6cfbe6d",
             "label": "Twitter",
             "name": "twitter",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_63544e02b3fd3",
+            "label": "Instagram",
+            "name": "instagram",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_63544e07b3fd4",
+            "label": "Pinterest",
+            "name": "pinterest",
+            "aria-label": "",
             "type": "url",
             "instructions": "",
             "required": 0,
@@ -53,5 +89,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1659281269
+    "modified": 1666469390
 }

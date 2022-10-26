@@ -40,7 +40,7 @@
 						if ($side_blocks) {
 							foreach ($side_blocks as $block) { ?>
 
-							<div class="side_block">
+							<a href="<?php echo $block['link']; ?>" class="side_block">
 								<?php if ($block['header'] || $block['subheader']) { ?>
 
 									<div class="image_outer">
@@ -50,7 +50,7 @@
 									
 										<div class="image_overlay">
 											<span class="header"><?php echo $block['header']; ?></span>
-											<a href="<?php echo $block['link']; ?>" class="button button-one"><?php echo $block['label']; ?></a>
+											<div class="button button-one"><?php echo $block['label']; ?></div>
 										</div>
 									</div>
 
@@ -59,13 +59,13 @@
 								<?php } else { ?>
 
 									<?php if ($block['image']) { ?>
-										<a href="<?php echo $block['link']; ?>" class="image_outer">
+										<div class="image_outer">
 											<?php echo optimised_image($block['image'], 'full'); ?>
-										</a>
+										</div>
 									<?php } ?>
 
 								<?php } ?>
-							</div>
+							</a>
 
 							<?php }
 						} ?>
@@ -79,7 +79,7 @@
 					if ($under_banner_blocks) {
 						foreach ($under_banner_blocks as $block) { ?>
 
-						<div class="side_block">
+						<a href="<?php echo $block['link']; ?>" class="side_block">
 							<?php if ($block['header'] || $block['subheader']) { ?>
 
 								<div class="image_outer">
@@ -89,7 +89,7 @@
 								
 									<div class="image_overlay">
 										<span class="header"><?php echo $block['header']; ?></span>
-										<a href="<?php echo $block['link']; ?>" class="button button-one"><?php echo $block['label']; ?></a>
+										<div class="button button-one"><?php echo $block['label']; ?></div>
 									</div>
 								</div>
 
@@ -98,13 +98,13 @@
 							<?php } else { ?>
 
 								<?php if ($block['image']) { ?>
-									<a href="<?php echo $block['link']; ?>" class="image_outer">
+									<div class="image_outer">
 										<?php echo optimised_image($block['image'], 'full'); ?>
-									</a>
+									</div>
 								<?php } ?>
 
 							<?php } ?>
-						</div>
+						</a>
 
 						<?php }
 					} ?>
@@ -126,14 +126,78 @@
 				<!-- <p class="subhead">Optional sub heading to follow...</p> -->
 
 				<?php
-				foreach ($featured_product_categories as $category) {
+				foreach ($featured_product_categories as $key => $category) {
 					include(locate_template('templates/category-card.php', false, false));
+
+					if ($key == 3 || $key == 7) {
+						echo '<hr>';
+					}
 				}
 				?>
 			</div>
 		</div>
 	</section>
 	<?php } ?>
+
+	<section class="explore_more_ways_section">
+		<div class="container">
+			<div class="section_inner">
+				<h2>Explore More Ways to Search</h2>
+				<p class="subhead">Optional sub heading to follow...</p>
+
+				<?php
+				$explore_more_ways_to_search_blocks = get_field('explore_more_ways_to_search_blocks');
+
+				if ($explore_more_ways_to_search_blocks) {
+					foreach ($explore_more_ways_to_search_blocks as $block) {
+					
+					$bg_color = null;
+
+					if ($block['background_colour']) {
+						$bg_color = $block['background_colour'];
+					}
+
+					?>
+
+					<a href="<?php echo $block['link']; ?>" class="side_block" <?php if ($bg_color) {?>style="background-color: <?php echo $bg_color; ?>;"<?php } ?>>
+						<?php if ($block['header'] || $block['subheader']) { ?>
+
+							<div class="image_outer">
+								<?php if ($block['image']) { ?>
+									<?php echo optimised_image($block['image'], 'full'); ?>
+								<?php } ?>
+									
+								<div class="image_overlay">
+									<?php if ($block['header']) { ?>
+										<span class="header"><?php echo $block['header']; ?></span>
+									<?php } ?>
+							
+									<?php if ($block['subheader']) { ?>
+										<p class="text"><?php echo $block['subheader']; ?></p>
+									<?php } ?>
+
+									<?php if ($block['label'] || $block['link']) { ?>
+										<div class="button button-one"><?php echo $block['label']; ?></div>
+									<?php } ?>
+								</div>
+							</div>
+
+						<?php } else { ?>
+
+							<?php if ($block['image']) { ?>
+								<div class="image_outer">
+									<?php echo optimised_image($block['image'], 'full'); ?>
+								</div>
+							<?php } ?>
+
+						<?php } ?>
+					</a>
+
+					<?php }
+				} ?>
+			</div>
+		</div>
+	</section>
 
 	<section class="featured_carousel_section">
 		<div class="container">
@@ -179,57 +243,27 @@
 		</div>
 	</section>
 
-	<?php
-	$brand_one_focus_image = get_field('brand_one_focus_image');
-	if ($brand_one_focus_image) {
-		if (get_field('brand_one_focus_product')) {
-			$post = get_field('brand_one_focus_product');
-			setup_postdata($post);
-			?>
-
-			<section class="focus_section focus_section_one">
-				<div class="container">
-					<div class="section_inner">
-						<h2>Brand Name Here</h2>
-						<p class="subhead">Optional sub heading to follow...</p>
-
-						<div class="left_side">
-							<?php echo optimised_image($brand_one_focus_image, 'large'); ?>
-						</div>
-						<div class="right_side">
-							<?php get_template_part('templates/product-card'); ?>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<?php
-			wp_reset_postdata();
-		}
-	}
-	?>
-
-	<section class="explore_more_ways_section">
+	<section class="explore_huge_saving_discounts_section">
 		<div class="container">
 			<div class="section_inner">
-				<h2>Explore More Ways to Search</h2>
+				<h2>Explore Huge Saving Discounts</h2>
 				<p class="subhead">Optional sub heading to follow...</p>
 
 				<?php
-				$explore_more_ways_to_search_blocks = get_field('explore_more_ways_to_search_blocks');
+				$explore_discounts_blocks = get_field('explore_huge_saving_discount_blocks');
 
-				if ($explore_more_ways_to_search_blocks) {
-					foreach ($explore_more_ways_to_search_blocks as $block) {
+				if ($explore_discounts_blocks) {
+					foreach ($explore_discounts_blocks as $block) {
 					
-						$bg_color = null;
-	
-						if ($block['background_colour']) {
-							$bg_color = $block['background_colour'];
-						}
-	
-						?>
-	
-						<div class="side_block" <?php if ($bg_color) {?>style="background-color: <?php echo $bg_color; ?>;"<?php } ?>>
+					$bg_color = null;
+
+					if ($block['background_colour']) {
+						$bg_color = $block['background_colour'];
+					}
+
+					?>
+
+					<a href="<?php echo $block['link']; ?>" class="side_block" <?php if ($bg_color) {?>style="background-color: <?php echo $bg_color; ?>;"<?php } ?>>
 						<?php if ($block['header'] || $block['subheader']) { ?>
 
 							<div class="image_outer">
@@ -247,7 +281,7 @@
 									<?php } ?>
 
 									<?php if ($block['label'] || $block['link']) { ?>
-										<a href="<?php echo $block['link']; ?>" class="button button-one"><?php echo $block['label']; ?></a>
+										<div class="button button-one"><?php echo $block['label']; ?></div>
 									<?php } ?>
 								</div>
 							</div>
@@ -255,19 +289,57 @@
 						<?php } else { ?>
 
 							<?php if ($block['image']) { ?>
-								<a href="<?php echo $block['link']; ?>" class="image_outer">
+								<div class="image_outer">
 									<?php echo optimised_image($block['image'], 'full'); ?>
-								</a>
+								</div>
 							<?php } ?>
 
 						<?php } ?>
-					</div>
+					</a>
 
 					<?php }
 				} ?>
 			</div>
 		</div>
 	</section>
+
+	<?php
+	$brand_one_focus_image = get_field('brand_one_focus_image');
+	if ($brand_one_focus_image) {
+		if (get_field('brand_one_focus_products')) {
+			$products = get_field('brand_one_focus_products');
+			?>
+
+			<section class="focus_section focus_section_one">
+				<div class="container">
+					<div class="section_inner">
+						<h2>Brand Name Here</h2>
+						<p class="subhead">Optional sub heading to follow...</p>
+
+						<div class="left_side">
+							<?php echo optimised_image($brand_one_focus_image, 'large'); ?>
+						</div>
+						<div class="right_side">
+							<div class="single_carousel">
+								<?php
+								foreach ($products as $product) {
+									$post = $product['brand_one_focus_product'];
+									setup_postdata($post);
+
+									get_template_part('templates/product-card');
+								}
+								?>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<?php
+			wp_reset_postdata();
+		}
+	}
+	?>
 
 	<section class="more_ways_to_save_section">
 		<div class="container">
@@ -289,7 +361,7 @@
 
 					?>
 
-					<div class="side_block" <?php if ($bg_color) {?>style="background-color: <?php echo $bg_color; ?>;"<?php } ?>>
+					<a href="<?php echo $block['link']; ?>" class="side_block" <?php if ($bg_color) {?>style="background-color: <?php echo $bg_color; ?>;"<?php } ?>>
 						<?php if ($block['header'] || $block['subheader']) { ?>
 
 							<div class="image_outer">
@@ -303,71 +375,7 @@
 									<?php } ?>
 
 									<?php if ($block['label'] || $block['link']) { ?>
-										<a href="<?php echo $block['link']; ?>" class="button button-one"><?php echo $block['label']; ?></a>
-									<?php } ?>
-								</div>
-							
-								<?php if ($block['subheader']) { ?>
-									<p class="text"><?php echo $block['subheader']; ?></p>
-								<?php } ?>
-							</div>
-
-						<?php } else { ?>
-
-							<?php if ($block['image']) { ?>
-								<a href="<?php echo $block['link']; ?>" class="image_outer">
-									<?php echo optimised_image($block['image'], 'full'); ?>
-								</a>
-							<?php } ?>
-
-						<?php } ?>
-					</div>
-
-					<?php }
-				} ?>
-			</div>
-		</div>
-	</section>
-
-	<section class="explore_huge_saving_discounts_section">
-		<div class="container">
-			<div class="section_inner">
-				<h2>Explore Huge Saving Discounts</h2>
-				<p class="subhead">Optional sub heading to follow...</p>
-
-				<?php
-				$explore_discounts_blocks = get_field('explore_huge_saving_discount_blocks');
-
-				if ($explore_discounts_blocks) {
-					foreach ($explore_discounts_blocks as $block) {
-					
-					$bg_color = null;
-
-					if ($block['background_colour']) {
-						$bg_color = $block['background_colour'];
-					}
-
-					?>
-
-					<div class="side_block" <?php if ($bg_color) {?>style="background-color: <?php echo $bg_color; ?>;"<?php } ?>>
-						<?php if ($block['header'] || $block['subheader']) { ?>
-
-							<div class="image_outer">
-								<?php if ($block['image']) { ?>
-									<?php echo optimised_image($block['image'], 'full'); ?>
-								<?php } ?>
-									
-								<div class="image_overlay">
-									<?php if ($block['header']) { ?>
-										<span class="header"><?php echo $block['header']; ?></span>
-									<?php } ?>
-							
-									<?php if ($block['subheader']) { ?>
-										<p class="text"><?php echo $block['subheader']; ?></p>
-									<?php } ?>
-
-									<?php if ($block['label'] || $block['link']) { ?>
-										<a href="<?php echo $block['link']; ?>" class="button button-one"><?php echo $block['label']; ?></a>
+										<div class="button button-one"><?php echo $block['label']; ?></div>
 									<?php } ?>
 								</div>
 							</div>
@@ -375,13 +383,17 @@
 						<?php } else { ?>
 
 							<?php if ($block['image']) { ?>
-								<a href="<?php echo $block['link']; ?>" class="image_outer">
+								<div class="image_outer">
 									<?php echo optimised_image($block['image'], 'full'); ?>
-								</a>
+								</div>
 							<?php } ?>
 
 						<?php } ?>
-					</div>
+							
+						<?php if ($block['subheader']) { ?>
+							<p class="text"><?php echo $block['subheader']; ?></p>
+						<?php } ?>
+					</a>
 
 					<?php }
 				} ?>
@@ -406,6 +418,8 @@
 					<p>No Need to Keep Checking - We Will Let you Know!</p>
 					<a href="/shop" class="button button-two">Shop Now</a> 
 				</div>
+
+				<?php get_template_part('templates/social-media-icons'); ?>
 			</div>
 		</div>
 	</section>
@@ -457,9 +471,8 @@
 	<?php
 	$brand_two_focus_image = get_field('brand_two_focus_image');
 	if ($brand_two_focus_image) {
-		if (get_field('brand_two_focus_product')) {
-			$post = get_field('brand_two_focus_product');
-			setup_postdata($post);
+		if (get_field('brand_two_focus_products')) {
+			$products = get_field('brand_two_focus_products');
 			?>
 
 			<section class="focus_section focus_section_two">
@@ -472,7 +485,16 @@
 							<?php echo optimised_image($brand_two_focus_image, 'large'); ?>
 						</div>
 						<div class="right_side">
-							<?php get_template_part('templates/product-card'); ?>
+							<div class="single_carousel">
+								<?php
+								foreach ($products as $product) {
+									$post = $product['brand_two_focus_product'];
+									setup_postdata($post);
+									
+									get_template_part('templates/product-card');
+								}
+								?>
+							</div>
 						</div>
 					</div>
 				</div>

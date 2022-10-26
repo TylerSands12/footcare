@@ -3,9 +3,10 @@
     "title": "Footer",
     "fields": [
         {
-            "key": "field_62e682ea7e369",
-            "label": "Newsletter Section",
+            "key": "field_63544f94cc780",
+            "label": "Bottom Banner",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -19,9 +20,10 @@
             "endpoint": 0
         },
         {
-            "key": "field_62e682f37e36a",
+            "key": "field_63544f9ecc781",
             "label": "Newsletter Background Image",
             "name": "newsletter_background_image",
+            "aria-label": "",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -32,7 +34,6 @@
                 "id": ""
             },
             "return_format": "id",
-            "preview_size": "medium",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -40,12 +41,14 @@
             "max_width": "",
             "max_height": "",
             "max_size": "",
-            "mime_types": ""
+            "mime_types": "",
+            "preview_size": "medium"
         },
         {
-            "key": "field_62e682fb7e36b",
+            "key": "field_63544faacc782",
             "label": "Newsletter Form",
             "name": "newsletter_form",
+            "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -62,9 +65,10 @@
             "delay": 0
         },
         {
-            "key": "field_62e68f1b011b9",
+            "key": "field_63544f85cc77f",
             "label": "Main Footer",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -81,6 +85,7 @@
             "key": "field_62e68f22011ba",
             "label": "Menu One",
             "name": "footer_menu_one",
+            "aria-label": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -94,12 +99,13 @@
             "min": 0,
             "max": 0,
             "layout": "table",
-            "button_label": "",
+            "button_label": "Add Row",
             "sub_fields": [
                 {
                     "key": "field_62e68f28011bb",
                     "label": "Label",
                     "name": "label",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -113,12 +119,14 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "parent_repeater": "field_62e68f22011ba"
                 },
                 {
                     "key": "field_62e68f2f011bc",
                     "label": "Link",
                     "name": "link",
+                    "aria-label": "",
                     "type": "page_link",
                     "instructions": "",
                     "required": 0,
@@ -132,14 +140,17 @@
                     "taxonomy": "",
                     "allow_null": 0,
                     "allow_archives": 1,
-                    "multiple": 0
+                    "multiple": 0,
+                    "parent_repeater": "field_62e68f22011ba"
                 }
-            ]
+            ],
+            "rows_per_page": 20
         },
         {
             "key": "field_62e68f38011bd",
             "label": "Menu Two",
             "name": "footer_menu_two",
+            "aria-label": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -153,12 +164,13 @@
             "min": 0,
             "max": 0,
             "layout": "table",
-            "button_label": "",
+            "button_label": "Add Row",
             "sub_fields": [
                 {
                     "key": "field_62e68f38011be",
                     "label": "Label",
                     "name": "label",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -172,12 +184,14 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "parent_repeater": "field_62e68f38011bd"
                 },
                 {
                     "key": "field_62e68f38011bf",
                     "label": "Link",
                     "name": "link",
+                    "aria-label": "",
                     "type": "taxonomy",
                     "instructions": "",
                     "required": 0,
@@ -194,14 +208,17 @@
                     "save_terms": 0,
                     "load_terms": 0,
                     "return_format": "object",
-                    "multiple": 0
+                    "multiple": 0,
+                    "parent_repeater": "field_62e68f38011bd"
                 }
-            ]
+            ],
+            "rows_per_page": 20
         },
         {
             "key": "field_62e68f4d011c0",
             "label": "Menu Three",
             "name": "footer_menu_three",
+            "aria-label": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -215,12 +232,13 @@
             "min": 0,
             "max": 0,
             "layout": "table",
-            "button_label": "",
+            "button_label": "Add Row",
             "sub_fields": [
                 {
                     "key": "field_62e68f4d011c1",
                     "label": "Label",
                     "name": "label",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -234,12 +252,14 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "parent_repeater": "field_62e68f4d011c0"
                 },
                 {
                     "key": "field_62e68f4d011c2",
                     "label": "Link",
                     "name": "link",
+                    "aria-label": "",
                     "type": "page_link",
                     "instructions": "",
                     "required": 0,
@@ -253,14 +273,17 @@
                     "taxonomy": "",
                     "allow_null": 0,
                     "allow_archives": 1,
-                    "multiple": 0
+                    "multiple": 0,
+                    "parent_repeater": "field_62e68f4d011c0"
                 }
-            ]
+            ],
+            "rows_per_page": 20
         },
         {
             "key": "field_62e6941b4871c",
             "label": "Icons",
             "name": "footer_icons",
+            "aria-label": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -274,12 +297,13 @@
             "min": 0,
             "max": 0,
             "layout": "table",
-            "button_label": "",
+            "button_label": "Add Row",
             "sub_fields": [
                 {
                     "key": "field_62e694244871d",
                     "label": "Icon",
                     "name": "icon",
+                    "aria-label": "",
                     "type": "image",
                     "instructions": "",
                     "required": 0,
@@ -298,14 +322,17 @@
                     "max_width": "",
                     "max_height": "",
                     "max_size": "",
-                    "mime_types": ""
+                    "mime_types": "",
+                    "parent_repeater": "field_62e6941b4871c"
                 }
-            ]
+            ],
+            "rows_per_page": 20
         },
         {
             "key": "field_62e695e8fa502",
             "label": "Disclaimer",
             "name": "footer_disclaimer",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -340,5 +367,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1659278834
+    "modified": 1666469816
 }
