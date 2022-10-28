@@ -341,6 +341,88 @@
 		</div>
 	</section>
 
+	<section class="featured_carousel_section">
+		<div class="container">
+
+			<h2>Suggested Solutions for Foot & Nail Fungus</h2>
+			<p class="subhead">Optional sub heading to follow...</p>
+			
+			<div class="carousel">
+				<?php
+				$args = array(
+					'post_type' => 'product',
+					'post_status' => 'publish',
+					'posts_per_page' => 12,
+					// 'order' => 'DESC',
+					// 'orderby' => 'ID',
+					'tax_query' => array(
+						array(
+							'taxonomy' => 'product_cat',
+							'field' => 'slug',
+							'terms' => 'featured',
+						),
+					),
+				);
+				
+				$query = new WP_Query( $args );
+
+				if ($query->have_posts()) {
+					while ($query->have_posts()) { 
+						$query->the_post();
+						?>
+
+						<div class="slide">
+							<?php get_template_part('templates/product-card'); ?>
+						</div>
+			
+						<?php
+					}
+				}
+
+				wp_reset_postdata();
+				?>
+			</div>
+		</div>
+	</section>
+
+	<?php
+	$brand_two_focus_image = get_field('brand_two_focus_image');
+	if ($brand_two_focus_image) {
+		if (get_field('brand_two_focus_products')) {
+			$products = get_field('brand_two_focus_products');
+			?>
+
+			<section class="focus_section focus_section_two">
+				<div class="container">
+					<div class="section_inner">
+						<h2>Brand Name Here</h2>
+						<p class="subhead">Optional sub heading to follow...</p>
+
+						<div class="left_side">
+							<?php echo optimised_image($brand_two_focus_image, 'large'); ?>
+						</div>
+						<div class="right_side">
+							<div class="single_carousel">
+								<?php
+								foreach ($products as $product) {
+									$post = $product['brand_two_focus_product'];
+									setup_postdata($post);
+									
+									get_template_part('templates/product-card');
+								}
+								?>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<?php
+			wp_reset_postdata();
+		}
+	}
+	?>
+
 	<section class="more_ways_to_save_section">
 		<div class="container">
 			<div class="section_inner">
@@ -423,88 +505,6 @@
 			</div>
 		</div>
 	</section>
-
-	<section class="featured_carousel_section">
-		<div class="container">
-
-			<h2>Suggested Solutions for Foot & Nail Fungus</h2>
-			<p class="subhead">Optional sub heading to follow...</p>
-			
-			<div class="carousel">
-				<?php
-				$args = array(
-					'post_type' => 'product',
-					'post_status' => 'publish',
-					'posts_per_page' => 12,
-					// 'order' => 'DESC',
-					// 'orderby' => 'ID',
-					'tax_query' => array(
-						array(
-							'taxonomy' => 'product_cat',
-							'field' => 'slug',
-							'terms' => 'featured',
-						),
-					),
-				);
-				
-				$query = new WP_Query( $args );
-
-				if ($query->have_posts()) {
-					while ($query->have_posts()) { 
-						$query->the_post();
-						?>
-
-						<div class="slide">
-							<?php get_template_part('templates/product-card'); ?>
-						</div>
-			
-						<?php
-					}
-				}
-
-				wp_reset_postdata();
-				?>
-			</div>
-		</div>
-	</section>
-
-	<?php
-	$brand_two_focus_image = get_field('brand_two_focus_image');
-	if ($brand_two_focus_image) {
-		if (get_field('brand_two_focus_products')) {
-			$products = get_field('brand_two_focus_products');
-			?>
-
-			<section class="focus_section focus_section_two">
-				<div class="container">
-					<div class="section_inner">
-						<h2>Brand Name Here</h2>
-						<p class="subhead">Optional sub heading to follow...</p>
-
-						<div class="left_side">
-							<?php echo optimised_image($brand_two_focus_image, 'large'); ?>
-						</div>
-						<div class="right_side">
-							<div class="single_carousel">
-								<?php
-								foreach ($products as $product) {
-									$post = $product['brand_two_focus_product'];
-									setup_postdata($post);
-									
-									get_template_part('templates/product-card');
-								}
-								?>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<?php
-			wp_reset_postdata();
-		}
-	}
-	?>
 
 	<section class="blog_posts_section">
 		<div class="container">
