@@ -169,10 +169,6 @@
 									<?php if ($block['header']) { ?>
 										<span class="header"><?php echo $block['header']; ?></span>
 									<?php } ?>
-							
-									<?php if ($block['subheader']) { ?>
-										<p class="text"><?php echo $block['subheader']; ?></p>
-									<?php } ?>
 
 									<?php if ($block['label'] || $block['link']) { ?>
 										<div class="button button-one"><?php echo $block['label']; ?></div>
@@ -188,6 +184,10 @@
 								</div>
 							<?php } ?>
 
+						<?php } ?>
+							
+						<?php if ($block['subheader']) { ?>
+							<p class="text"><?php echo $block['subheader']; ?></p>
 						<?php } ?>
 					</a>
 
@@ -299,10 +299,10 @@
 
 					?>
 
-					<a href="<?php echo $block['link']; ?>" class="side_block" <?php if ($bg_color) {?>style="background-color: <?php echo $bg_color; ?>;"<?php } ?>>
+					<a href="<?php echo $block['link']; ?>" class="side_block">
 						<?php if ($block['header'] || $block['subheader']) { ?>
 
-							<div class="image_outer">
+							<div class="image_outer" <?php if ($bg_color) {?>style="background-color: <?php echo $bg_color; ?>;"<?php } ?>>
 								<?php if ($block['image']) { ?>
 									<?php echo optimised_image($block['image'], 'full'); ?>
 								<?php } ?>
@@ -310,10 +310,6 @@
 								<div class="image_overlay">
 									<?php if ($block['header']) { ?>
 										<span class="header"><?php echo $block['header']; ?></span>
-									<?php } ?>
-							
-									<?php if ($block['subheader']) { ?>
-										<p class="text"><?php echo $block['subheader']; ?></p>
 									<?php } ?>
 
 									<?php if ($block['label'] || $block['link']) { ?>
@@ -330,6 +326,10 @@
 								</div>
 							<?php } ?>
 
+						<?php } ?>
+							
+						<?php if ($block['subheader']) { ?>
+							<p class="text"><?php echo $block['subheader']; ?></p>
 						<?php } ?>
 					</a>
 
