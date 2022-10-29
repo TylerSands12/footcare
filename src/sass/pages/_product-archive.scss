@@ -226,7 +226,7 @@
         .top_banner {
             width: 100%;
             position: relative;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
 
             img {
                 width: 100%;
@@ -242,6 +242,15 @@
                 height: 100%;
                 position: absolute;
             }
+        }
+
+        .description {
+            width: 100%;
+            margin: 0 0 4rem;
+            font-size: 1.2rem;
+            line-height: 1.2;
+            font-style: italic;
+            text-align: center;
         }
     }
 }

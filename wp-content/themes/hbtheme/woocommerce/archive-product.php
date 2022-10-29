@@ -91,6 +91,10 @@ if (is_product_category()) {
 							<?php echo optimised_image($category_banner_image, 'full'); ?>
 						</section>
 						<?php } ?>
+						
+						<?php if ($current_category->description) { ?>
+						<p class="description"><?php echo $current_category->description; ?></p>
+						<?php } ?>
 
 					<?php } ?>
 					

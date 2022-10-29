@@ -112,8 +112,6 @@
 			</div>
 		</div>
 	</section>
-
-	<?php get_template_part('templates/usp-banner'); ?>
 	
 	<?php
 	$featured_product_categories = get_field('featured_categories_carousel');
@@ -482,6 +480,8 @@
 			</div>
 		</div>
 	</section>
+
+	<?php get_template_part('templates/usp-banner'); ?>
 
 	<section class="stay_connected_section">
 		<div class="container">
