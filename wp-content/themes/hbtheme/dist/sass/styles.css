@@ -1672,9 +1672,8 @@ a:hover {
 .product_archive_wrapper.category_page_wrapper .description {
   width: 100%;
   margin: 0 0 4rem;
-  font-size: 1.2rem;
-  line-height: 1.2;
-  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.4;
   text-align: center;
 }
 
