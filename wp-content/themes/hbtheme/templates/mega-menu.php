@@ -74,14 +74,5 @@ $mega_menu = get_field('level_one', 'options')
                 <?php } ?>
             </li>
         <?php } ?>
-        <li>
-            <span>
-                <?php if (is_user_logged_in()) { ?>
-                    <a href="<?php echo wp_logout_url(); ?>">LOG OUT</a>
-                <?php } else { ?>
-                    <a href="/my-account">LOG IN</a>
-                <?php } ?>
-            </span>
-        </li>
     </ul>
 </nav>

@@ -184,6 +184,25 @@ body a {
   margin-right: 1rem;
 }
 
+body .predictive_results.predictive_results_header ul.predictive_search_results li.ac_odd div.ajax_search_content_title {
+  font-family: "sofia-pro", arial, sans-serif !important;
+}
+body .predictive_results.predictive_results_header ul.predictive_search_results li.ac_odd .ajax_search_content {
+  padding: 1rem;
+}
+body .predictive_results.predictive_results_header ul.predictive_search_results li.ac_odd .ajax_search_content .result_row .rs_content_popup p, body .predictive_results.predictive_results_header ul.predictive_search_results li.ac_odd .ajax_search_content .result_row .rs_content_popup a, body .predictive_results.predictive_results_header ul.predictive_search_results li.ac_odd .ajax_search_content .result_row .rs_content_popup span {
+  font-family: "sofia-pro", arial, sans-serif !important;
+}
+body .predictive_results.predictive_results_header ul.predictive_search_results li.ac_odd .ajax_search_content .result_row .rs_content_popup .rs_name {
+  font-size: 1rem !important;
+}
+body .predictive_results.predictive_results_header ul.predictive_search_results li.ac_odd .ajax_search_content .result_row .rs_content_popup .rs_price {
+  font-size: 0.8rem !important;
+}
+body .predictive_results.predictive_results_header ul.predictive_search_results li.ac_odd .ajax_search_content .result_row .rs_content_popup .rs_price span, body .predictive_results.predictive_results_header ul.predictive_search_results li.ac_odd .ajax_search_content .result_row .rs_content_popup .rs_price bdi {
+  font-size: 0.8rem !important;
+}
+
 html,
 body,
 div,
@@ -2736,15 +2755,45 @@ header {
   z-index: 999;
   background: #fff;
 }
-header a.logo {
+header .left_side a.logo {
   display: inline-block;
   padding: 1rem 0;
 }
-header a.logo img {
+header .left_side a.logo img {
   width: 200px;
   height: auto;
 }
-
+header .middle {
+  flex-grow: 1;
+  padding: 0 4rem;
+}
+header .middle .predictive-search-widget-area .widget .wc_ps_bar .wc_ps_container {
+  margin: 0 !important;
+  border: 1px solid #ededed !important;
+  border-radius: 0 !important;
+}
+header .right_side {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+header .right_side a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+header .right_side a:not(:last-child) {
+  margin-right: 1.5rem;
+}
+header .right_side a svg {
+  width: auto;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+}
+header .right_side a svg path {
+  fill: #FBB911;
+}
 footer#footer {
   width: 100%;
   background: #F5F5F5;

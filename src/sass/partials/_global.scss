@@ -21,3 +21,48 @@
         }
     }
 }
+
+// Predictive Search
+body .predictive_results.predictive_results_header ul.predictive_search_results li {
+    &.ac_odd {
+        div.ajax_search_content_title {
+            font-family: "sofia-pro", arial, sans-serif !important;
+        }
+
+        .ajax_search_content {
+            padding: 1rem;
+
+            .result_row {
+                .rs_content_popup {
+                    p, a, span {
+                        font-family: "sofia-pro", arial, sans-serif !important;
+                    }
+
+                    .rs_name {
+                        font-size: 1rem !important;
+                    }
+
+                    .rs_price {
+                        font-size: .8rem !important;
+
+                        span, bdi {
+                            font-size: .8rem !important;
+                        }
+                    }
+
+                    .rs_description {
+                        font-size: .8rem !important;
+                    }
+
+                    .rs_cat {
+                        font-size: .8rem !important;
+                        
+                        a {
+                            font-size: .8rem !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
