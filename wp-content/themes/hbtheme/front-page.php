@@ -336,6 +336,10 @@
 					<?php }
 				} ?>
 			</div>
+
+			<div class="view_all_button_outer">
+				<a href="#" class="button button-two">View All Promotions</a>
+			</div>
 		</div>
 	</section>
 
@@ -518,7 +522,7 @@
 					$args = array(
 						'post_type' => 'post',
 						'post_status' => 'publish',
-						'posts_per_page' => 4,
+						'posts_per_page' => 5,
 						'tax_query' => array(
 							array(
 								'taxonomy' => 'category',
@@ -539,12 +543,11 @@
 
 					wp_reset_postdata();
 					?>
-
-					<a href="/blog" class="blog_card see_all_card">
-						<span>See All</span>
-						<?php get_template_part('templates/arrow-right'); ?>
-					</a>
 				</div>
+			</div>
+
+			<div class="view_all_button_outer">
+				<a href="#" class="button button-two">See More Articles</a>
 			</div>
 		</div>
 	</section>

@@ -6,7 +6,7 @@
         <div class="image_overlay">
             <h4><?php the_title(); ?></h4>
             <p class="text"><?php echo wp_trim_words( get_the_excerpt(), 20, '...' ); ?></p>
-            <div class="button button-one">Read More</div>
+            <div class="button button-one">Learn More</div>
         </div>
     </a>
 

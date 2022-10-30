@@ -14,8 +14,8 @@ $mega_menu = get_field('level_one', 'options')
                     <ul>
                         <?php foreach ($level_one_item['level_two'] as $key => $level_two_item) { ?>
                             <li>
-                                <?php if ($level_two_item['product_category']) { ?>
-                                    <span><?php echo $level_two_item['product_category']->name; ?></span>
+                                <?php if ($level_two_item['label']) { ?>
+                                    <span><?php echo $level_two_item['label']; ?></span>
                                 <?php } ?>
                 
                                 <?php if ($level_two_item['columns']) { ?>
@@ -37,6 +37,12 @@ $mega_menu = get_field('level_one', 'options')
                                                                 <?php if ($link['product_category']) { ?>
                                                                     <li class="link">
                                                                         <a href="<?php echo get_term_link($link['product_category']); ?>">
+                                                                            <span><?php echo $link['product_category']->name; ?></span>
+                                                                        </a>
+                                                                    </li>
+                                                                <?php } else { ?>
+                                                                    <li class="link">
+                                                                        <a href="#">
                                                                             <span><?php echo $link['product_category']->name; ?></span>
                                                                         </a>
                                                                     </li>
@@ -68,5 +74,14 @@ $mega_menu = get_field('level_one', 'options')
                 <?php } ?>
             </li>
         <?php } ?>
+        <li>
+            <span>
+                <?php if (is_user_logged_in()) { ?>
+                    <a href="<?php echo wp_logout_url(); ?>">LOG OUT</a>
+                <?php } else { ?>
+                    <a href="/my-account">LOG IN</a>
+                <?php } ?>
+            </span>
+        </li>
     </ul>
 </nav>

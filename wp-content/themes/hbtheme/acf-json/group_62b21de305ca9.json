@@ -6,6 +6,7 @@
             "key": "field_62b21de631ce6",
             "label": "Level One",
             "name": "level_one",
+            "aria-label": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -25,6 +26,7 @@
                     "key": "field_62b21df031ce7",
                     "label": "Label",
                     "name": "label",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -38,12 +40,14 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "parent_repeater": "field_62b21de631ce6"
                 },
                 {
                     "key": "field_62b21dfb31ce8",
                     "label": "Level Two",
                     "name": "level_two",
+                    "aria-label": "",
                     "type": "repeater",
                     "instructions": "",
                     "required": 0,
@@ -60,9 +64,31 @@
                     "button_label": "Add Second Level Menu Item",
                     "sub_fields": [
                         {
+                            "key": "field_635e7b91602d1",
+                            "label": "Label",
+                            "name": "label",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_62b21dfb31ce8"
+                        },
+                        {
                             "key": "field_62b21dff31ce9",
                             "label": "Product Category",
                             "name": "product_category",
+                            "aria-label": "",
                             "type": "taxonomy",
                             "instructions": "",
                             "required": 0,
@@ -79,12 +105,14 @@
                             "save_terms": 0,
                             "load_terms": 0,
                             "return_format": "object",
-                            "multiple": 0
+                            "multiple": 0,
+                            "parent_repeater": "field_62b21dfb31ce8"
                         },
                         {
                             "key": "field_62b21f610deaf",
                             "label": "Columns",
                             "name": "columns",
+                            "aria-label": "",
                             "type": "repeater",
                             "instructions": "",
                             "required": 0,
@@ -104,6 +132,7 @@
                                     "key": "field_62b21fa283d36",
                                     "label": "Type of Column",
                                     "name": "type_of_column",
+                                    "aria-label": "",
                                     "type": "select",
                                     "instructions": "",
                                     "required": 0,
@@ -123,12 +152,14 @@
                                     "ui": 0,
                                     "return_format": "value",
                                     "ajax": 0,
-                                    "placeholder": ""
+                                    "placeholder": "",
+                                    "parent_repeater": "field_62b21f610deaf"
                                 },
                                 {
                                     "key": "field_62b21fb683d37",
                                     "label": "Links",
                                     "name": "links",
+                                    "aria-label": "",
                                     "type": "repeater",
                                     "instructions": "",
                                     "required": 0,
@@ -153,9 +184,31 @@
                                     "button_label": "Add Link",
                                     "sub_fields": [
                                         {
+                                            "key": "field_635e7b9b602d2",
+                                            "label": "Label",
+                                            "name": "label",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "parent_repeater": "field_62b21fb683d37"
+                                        },
+                                        {
                                             "key": "field_62b21fbe83d38",
                                             "label": "Product Category",
                                             "name": "product_category",
+                                            "aria-label": "",
                                             "type": "taxonomy",
                                             "instructions": "",
                                             "required": 0,
@@ -172,14 +225,18 @@
                                             "save_terms": 0,
                                             "load_terms": 0,
                                             "return_format": "object",
-                                            "multiple": 0
+                                            "multiple": 0,
+                                            "parent_repeater": "field_62b21fb683d37"
                                         }
-                                    ]
+                                    ],
+                                    "rows_per_page": 20,
+                                    "parent_repeater": "field_62b21f610deaf"
                                 },
                                 {
                                     "key": "field_62b21fd483d3a",
                                     "label": "Image",
                                     "name": "image",
+                                    "aria-label": "",
                                     "type": "image",
                                     "instructions": "",
                                     "required": 0,
@@ -206,13 +263,19 @@
                                     "max_width": "",
                                     "max_height": "",
                                     "max_size": "",
-                                    "mime_types": ""
+                                    "mime_types": "",
+                                    "parent_repeater": "field_62b21f610deaf"
                                 }
-                            ]
+                            ],
+                            "rows_per_page": 20,
+                            "parent_repeater": "field_62b21dfb31ce8"
                         }
-                    ]
+                    ],
+                    "rows_per_page": 20,
+                    "parent_repeater": "field_62b21de631ce6"
                 }
-            ]
+            ],
+            "rows_per_page": 20
         }
     ],
     "location": [
@@ -233,5 +296,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1655846123
+    "modified": 1667136424
 }
