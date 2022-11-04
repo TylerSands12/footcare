@@ -293,7 +293,6 @@
                 flex-direction: row;
                 align-items: stretch;
                 justify-content: space-between;
-                padding-top: 1rem;
         
                 .side_block {
                     width: 33.33%;
@@ -310,10 +309,6 @@
                     &:hover {
                         border-color: #a5a5a5;
                         box-shadow: 0 0 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-                    }
-
-                    &:not(:last-child) {
-                        margin-right: .5rem;
                     }
 
                     .image_outer {
@@ -738,6 +733,7 @@
             align-items: stretch;
             justify-content: space-between;
             flex-wrap: wrap;
+            padding: 0 10rem;
 
             >.left_side, .right_side {
                 width: 49.5%;

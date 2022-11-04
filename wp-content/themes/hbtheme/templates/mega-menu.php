@@ -27,33 +27,46 @@ $mega_menu = get_field('level_one', 'options')
                                             <div class="column">
                                                 <?php if ($column['type_of_column'] == "links") { ?>
                                                     <?php if ($column['links']) { ?>
+
+                                                        <?php if ($level_two_item['product_category']) { ?>
+                                                            <a class="links_header" href="<?php echo get_term_link($level_two_item['product_category']); ?>">
+                                                                <span><?php echo $level_two_item['label']; ?></span>
+                                                            </a>
+                                                        <?php } else { ?>
+                                                            <a class="links_header" href="#">
+                                                                <span><?php echo $level_two_item['label']; ?></span>
+                                                            </a>
+                                                        <?php } ?>
+
                                                         <ul class="links">
-                                                            <li class="links_header">
-                                                                <a href="<?php echo get_term_link($level_two_item['product_category']); ?>">
-                                                                    <span><?php echo $level_two_item['product_category']->name; ?></span>
-                                                                </a>
-                                                            </li>
-                                                            <?php foreach ($column['links'] as $key => $link) { ?>
-                                                                <?php if ($link['product_category']) { ?>
-                                                                    <li class="link">
-                                                                        <a href="<?php echo get_term_link($link['product_category']); ?>">
-                                                                            <span><?php echo $link['product_category']->name; ?></span>
-                                                                        </a>
-                                                                    </li>
-                                                                <?php } else { ?>
-                                                                    <li class="link">
-                                                                        <a href="#">
-                                                                            <span><?php echo $link['product_category']->name; ?></span>
-                                                                        </a>
-                                                                    </li>
-                                                                <?php } ?>
-                                                            <?php } ?>
-                                                            <li class="links_view_all">
-                                                                <a href="<?php echo get_term_link($level_two_item['product_category']); ?>">
-                                                                    <span>View All</span>
-                                                                </a>
-                                                            </li>
+                                                            <?php if ($column['links']) {
+                                                                foreach ($column['links'] as $key => $link) { ?>
+                                                                    <?php if ($link['product_category']) { ?>
+                                                                        <li class="link">
+                                                                            <a href="<?php echo get_term_link($link['product_category']); ?>">
+                                                                                <span><?php echo $link['label']; ?></span>
+                                                                            </a>
+                                                                        </li>
+                                                                    <?php } else { ?>
+                                                                        <li class="link">
+                                                                            <a href="#">
+                                                                                <span><?php echo $link['label']; ?></span>
+                                                                            </a>
+                                                                        </li>
+                                                                    <?php } ?>
+                                                                <?php }
+                                                            } ?>
                                                         </ul>
+
+                                                        <?php if ($level_two_item['product_category']) { ?>
+                                                            <a class="links_view_all" href="<?php echo get_term_link($level_two_item['product_category']); ?>">
+                                                                <span>View All</span>
+                                                            </a>
+                                                        <?php } else { ?>
+                                                            <a class="links_view_all" href="#">
+                                                                <span>View All</span>
+                                                            </a>
+                                                        <?php } ?>
                                                     <?php } ?>
                                                 <?php } ?>
 

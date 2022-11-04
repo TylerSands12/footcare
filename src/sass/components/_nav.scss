@@ -66,6 +66,7 @@ nav#main_menu {
 
                     >.mega_menu_popout {
                         width: 1200px;
+                        height: 21rem;
                         max-width: 100%;
                         position: absolute;
                         top: 100%;
@@ -80,17 +81,42 @@ nav#main_menu {
                         padding: 2rem;
 
                         >.column {
-                            flex-grow: 1;
-                            flex-basis: 0;
-                            
-                            &:not(:last-child) {
+                            &:nth-child(1) {
+                                width: 50%;
                                 padding-right: 2rem;
                             }
 
+                            &:nth-child(2) {
+                                width: 25%;
+                                padding-right: 2rem;
+                            }
+
+                            &:nth-child(3) {
+                                width: 25%;
+                            }
+
+                            .links_header {
+                                display: block;
+                                margin-bottom: 1.5rem !important;
+
+                                span {
+                                    font-size: 1.2rem;
+                                    font-weight: 700 !important;
+                                }
+                            }
+
+                            .links_view_all {
+                                display: block;
+                                margin-top: 1.5rem !important;
+
+                                span {
+                                    font-size: 1.2rem;
+                                    font-weight: 700 !important;
+                                }
+                            }
+
                             >ul.links {
-                                display: flex;
-                                flex-direction: column;
-                                padding: 2rem;
+                                columns: 2;
 
                                 >li {
                                     a {
@@ -106,23 +132,8 @@ nav#main_menu {
                                         margin-bottom: .5rem !important;
                                         
                                         span {
+                                            font-size: 1.2rem;
                                             font-weight: 400;
-                                        }
-                                    }
-
-                                    &.links_header {
-                                        margin-bottom: 1.5rem !important;
-
-                                        span {
-                                            font-weight: 700 !important;
-                                        }
-                                    }
-
-                                    &.links_view_all {
-                                        margin-top: 1rem !important;
-
-                                        span {
-                                            font-weight: 700 !important;
                                         }
                                     }
                                 }
