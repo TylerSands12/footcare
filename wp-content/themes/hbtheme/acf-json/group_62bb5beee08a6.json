@@ -721,11 +721,13 @@
                 "class": "",
                 "id": ""
             },
-            "collapsed": "",
-            "min": 0,
-            "max": 4,
             "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 7,
+            "collapsed": "",
             "button_label": "Add Block",
+            "rows_per_page": 20,
             "sub_fields": [
                 {
                     "key": "field_635311e52b4e1",
@@ -856,8 +858,7 @@
                     "maxlength": "",
                     "parent_repeater": "field_635311e52b4e0"
                 }
-            ],
-            "rows_per_page": 20
+            ]
         },
         {
             "key": "field_635311882b4d1",
@@ -1254,5 +1255,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1667054593
+    "modified": 1667571700
 }
