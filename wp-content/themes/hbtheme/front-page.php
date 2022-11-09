@@ -115,7 +115,8 @@
 	
 	<?php
 	$featured_product_categories = get_field('featured_categories_carousel');
-	if ($featured_product_categories) { ?>
+	if ($featured_product_categories) {
+	?>
 	<section class="product_categories_section">
 		<div class="container">
 			
