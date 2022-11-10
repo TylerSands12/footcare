@@ -1,9 +1,11 @@
 (function($) { 
 
     $(document).ready(function () {
-
-        // Code goes here
-        console.log("Hola planets");
+        
+        $(".nav_toggle").on("click", function() {
+            $("#main_menu").toggleClass("active");
+            $(this).toggleClass("active");
+        });
 
     });
 

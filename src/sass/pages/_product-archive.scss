@@ -233,15 +233,15 @@
                 height: auto;
             }
 
-            &:after {
-                content: '';
-                background: rgba(0, 0, 0, .16);
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                position: absolute;
-            }
+            // &:after {
+            //     content: '';
+            //     background: rgba(0, 0, 0, .16);
+            //     top: 0;
+            //     left: 0;
+            //     width: 100%;
+            //     height: 100%;
+            //     position: absolute;
+            // }
         }
 
         .description {

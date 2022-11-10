@@ -87,5 +87,18 @@ $mega_menu = get_field('level_one', 'options')
                 <?php } ?>
             </li>
         <?php } ?>
+        <?php if (!is_user_logged_in()) { ?>
+        <li>
+            <a href="/my-account" class="mobile_nav_btn mobile_login_btn">Sign In</a>
+        </li>
+        <?php } ?>
+        <?php if (is_user_logged_in()) { ?>
+        <li>
+            <a href="/my-account" class="mobile_nav_btn mobile_account_btn">My Account</a>
+        </li>
+        <li>
+            <a href="<?php echo wp_logout_url(); ?>" class="mobile_nav_btn mobile_logout_btn">Sign Out</a>
+        </li>
+        <?php } ?>
     </ul>
 </nav>

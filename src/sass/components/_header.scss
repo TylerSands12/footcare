@@ -10,21 +10,110 @@ header {
     z-index: 999;
     background: #fff;
 
+    @media (max-width: 991px) {
+        padding: 0 2rem;
+    }
+
     .left_side {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
         a.logo {
             display: inline-block;
             padding: 1rem 0;
     
             img {
                 width: 200px;
+                max-width: 100%;
                 height: auto;
+
+                @media (max-width: 500px) {
+                    width: 150px;
+                }
+            }
+        }
+  
+        .nav_toggle {
+            width: 53.33333333333333px;
+            height: 53.33333333333333px;
+            position: relative;
+            cursor: pointer;
+            transform: translate3d(0, 0, 0);
+            transition: all .3s ease;
+            margin-left: -14px;
+
+            @media (min-width: 992px) {
+              display: none;
+            }
+
+            span {
+                transition: 0.15s top ease-out;
+                background: $orange;
+                width: 24px;
+                height: 3px;
+                position: absolute;
+                left: 50%;
+                transform: translate3d(-50%, 0, 0);
+
+                &:nth-child(1) {
+                    top: 17.333333333333332px;
+                }
+
+                &:nth-child(2) {
+                    top: 25.333333333333332px;
+                }
+
+                &:nth-child(3) {
+                    top: 33.33333333333333px;
+                }
+            }
+
+            &:not(.active):hover {
+                span {
+                    &:nth-child(1) {
+                        top: 14.666666666666666px;
+                    }
+    
+                    &:nth-child(2) {
+                        top: 25.333333333333332px;
+                    }
+    
+                    &:nth-child(3) {
+                        top: 36px;
+                    }
+                }
+            }
+
+            &.active {
+                span {
+                    transition: 0.15s top ease-out, 0.15s width ease-out, 0.15s transform 0.15s ease-out, 0.15s -webkit-transform 0.15s ease-out;
+                    top: 50%;
+                    background: $black;
+
+                    &:nth-child(1) {
+                        transform: translate3d(-50%, -50%, 0) rotate(45deg);
+                    }
+    
+                    &:nth-child(2) {
+                        opacity: 0;
+                    }
+    
+                    &:nth-child(3) {
+                        transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+                    }
+                }
             }
         }
     }
 
     .middle {
         flex-grow: 1;
-        padding: 0 4rem;
+        padding: 0 2rem;
+
+        @media (max-width: 991px) {
+            display: none;
+        }
 
         .predictive-search-widget-area {
             .widget {
@@ -61,8 +150,10 @@ header {
             flex-direction: row;
             align-items: center;
 
-            &:not(:last-child) {
-                margin-right: 1.5rem;
+            @media (min-width: 768px) {
+                &:not(:last-child) {
+                    margin-right: 1.5rem;
+                }
             }
 
             svg {
@@ -75,8 +166,35 @@ header {
                 }
             }
 
-            span {
+            @media (max-width: 767px) {
+                &.account {
+                    display: none;
+                }
+            }
+        }
+    }
 
+    .mobile_search_area {
+        width: 100%;
+
+        @media (min-width: 992px) {
+            display: none;
+        }
+
+        .predictive-search-widget-area {
+            .widget.widget_products_predictive_search {
+                .wc_ps_bar {
+                    .wc_ps_mobile_icon {
+                        display: none !important;
+                    }
+
+                    div.wc_ps_container {
+                        visibility: visible !important;
+                        height: auto !important;
+                        position: relative !important;
+                        border: 1px solid #cdcdcd !important;
+                    }
+                }
             }
         }
     }

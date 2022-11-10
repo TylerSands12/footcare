@@ -147,7 +147,7 @@
 			<div class="section_inner">
 				<div class="heading_area">
 					<h2>Explore More Ways to Search</h2>
-					<p class="subhead">Optional sub heading to follow...</p>
+					<!-- <p class="subhead">Optional sub heading to follow...</p> -->
 				</div>
 				
 				<div class="blocks_outer">
@@ -211,8 +211,8 @@
 			
 			<div class="heading_area_outer">
 				<div class="heading_area">
-					<h2>Insoles You Ought To Try</h2>
-					<p class="subhead">Optional sub heading to follow...</p>
+					<h2><?php the_field('carousel_one_heading'); ?></h2>
+					<p class="subhead"><?php the_field('carousel_one_subheading'); ?></p>
 				</div>
 			</div>
 			
@@ -251,52 +251,162 @@
 				wp_reset_postdata();
 				?>
 			</div>
+
+			<div class="blocks_outer">
+				<?php
+				$under_carousel_feature_blocks_one = get_field('under_carousel_feature_blocks_one');
+				
+				if ($under_carousel_feature_blocks_one) {
+					foreach ($under_carousel_feature_blocks_one as $block) {
+					
+					$bg_color = null;
+
+					if ($block['background_colour']) {
+						$bg_color = $block['background_colour'];
+					}
+
+					?>
+
+					<a href="<?php echo $block['link']; ?>" class="side_block" <?php if ($bg_color) {?>style="background-color: <?php echo $bg_color; ?>;"<?php } ?>>
+						<?php if ($block['header'] || $block['subheader']) { ?>
+
+							<div class="image_outer">
+								<?php if ($block['image']) { ?>
+									<?php echo optimised_image($block['image'], 'full'); ?>
+								<?php } ?>
+									
+								<div class="image_overlay">
+									<?php if ($block['header']) { ?>
+										<span class="header"><?php echo $block['header']; ?></span>
+									<?php } ?>
+
+									<?php if ($block['label'] || $block['link']) { ?>
+										<div class="button button-one"><?php echo $block['label']; ?></div>
+									<?php } ?>
+								</div>
+							</div>
+
+						<?php } else { ?>
+
+							<?php if ($block['image']) { ?>
+								<div class="image_outer">
+									<?php echo optimised_image($block['image'], 'full'); ?>
+								</div>
+							<?php } ?>
+
+						<?php } ?>
+							
+						<?php if ($block['subheader']) { ?>
+							<p class="text"><?php echo $block['subheader']; ?></p>
+						<?php } ?>
+					</a>
+
+					<?php }
+				} ?>
+			</div>
 		</div>
 	</section>
 
-	<?php
-	$brand_one_focus_image = get_field('brand_one_focus_image');
-	if ($brand_one_focus_image) {
-		if (get_field('brand_one_focus_products')) {
-			$products = get_field('brand_one_focus_products');
-			?>
-
-			<section class="focus_section focus_section_one">
-				<div class="container">
-					<div class="section_inner">
-						
-						<div class="heading_area_outer">
-							<div class="heading_area">
-								<h2>Brand Name Here</h2>
-								<p class="subhead">Optional sub heading to follow...</p>
-							</div>
-						</div>
-
-						<div class="left_side">
-							<?php echo optimised_image($brand_one_focus_image, 'large'); ?>
-						</div>
-
-						<div class="right_side">
-							<div class="single_carousel">
-								<?php
-								foreach ($products as $product) {
-									$post = $product['brand_one_focus_product'];
-									setup_postdata($post);
-
-									get_template_part('templates/product-card');
-								}
-								?>
-							</div>
-						</div>
-					</div>
+	<section class="featured_carousel_section">
+		<div class="container">
+			
+			<div class="heading_area_outer">
+				<div class="heading_area">
+					<h2><?php the_field('carousel_two_heading'); ?></h2>
+					<p class="subhead"><?php the_field('carousel_two_subheading'); ?></p>
 				</div>
-			</section>
+			</div>
+			
+			<div class="carousel">
+				<?php
+				$args = array(
+					'post_type' => 'product',
+					'post_status' => 'publish',
+					'posts_per_page' => 12,
+					// 'order' => 'DESC',
+					// 'orderby' => 'ID',
+					'tax_query' => array(
+						array(
+							'taxonomy' => 'product_cat',
+							'field' => 'slug',
+							'terms' => 'featured',
+						),
+					),
+				);
+				
+				$query = new WP_Query( $args );
 
-			<?php
-			wp_reset_postdata();
-		}
-	}
-	?>
+				if ($query->have_posts()) {
+					while ($query->have_posts()) { 
+						$query->the_post();
+						?>
+
+						<div class="slide">
+							<?php get_template_part('templates/product-card'); ?>
+						</div>
+			
+						<?php
+					}
+				}
+
+				wp_reset_postdata();
+				?>
+			</div>
+
+			<div class="blocks_outer">
+				<?php
+				$under_carousel_feature_blocks_two = get_field('under_carousel_feature_blocks_two');
+
+				if ($under_carousel_feature_blocks_two) {
+					foreach ($under_carousel_feature_blocks_two as $block) {
+					
+					$bg_color = null;
+
+					if ($block['background_colour']) {
+						$bg_color = $block['background_colour'];
+					}
+
+					?>
+
+					<a href="<?php echo $block['link']; ?>" class="side_block" <?php if ($bg_color) {?>style="background-color: <?php echo $bg_color; ?>;"<?php } ?>>
+						<?php if ($block['header'] || $block['subheader']) { ?>
+
+							<div class="image_outer">
+								<?php if ($block['image']) { ?>
+									<?php echo optimised_image($block['image'], 'full'); ?>
+								<?php } ?>
+									
+								<div class="image_overlay">
+									<?php if ($block['header']) { ?>
+										<span class="header"><?php echo $block['header']; ?></span>
+									<?php } ?>
+
+									<?php if ($block['label'] || $block['link']) { ?>
+										<div class="button button-one"><?php echo $block['label']; ?></div>
+									<?php } ?>
+								</div>
+							</div>
+
+						<?php } else { ?>
+
+							<?php if ($block['image']) { ?>
+								<div class="image_outer">
+									<?php echo optimised_image($block['image'], 'full'); ?>
+								</div>
+							<?php } ?>
+
+						<?php } ?>
+							
+						<?php if ($block['subheader']) { ?>
+							<p class="text"><?php echo $block['subheader']; ?></p>
+						<?php } ?>
+					</a>
+
+					<?php }
+				} ?>
+			</div>
+		</div>
+	</section>
 
 	<section class="explore_huge_saving_discounts_section">
 		<div class="container">
@@ -366,97 +476,6 @@
 			</div>
 		</div>
 	</section>
-
-	<section class="featured_carousel_section">
-		<div class="container">
-			
-			<div class="heading_area_outer">
-				<div class="heading_area">
-					<h2>Suggested Solutions for Foot & Nail Fungus</h2>
-					<p class="subhead">Optional sub heading to follow...</p>
-				</div>
-			</div>
-			
-			<div class="carousel">
-				<?php
-				$args = array(
-					'post_type' => 'product',
-					'post_status' => 'publish',
-					'posts_per_page' => 12,
-					// 'order' => 'DESC',
-					// 'orderby' => 'ID',
-					'tax_query' => array(
-						array(
-							'taxonomy' => 'product_cat',
-							'field' => 'slug',
-							'terms' => 'featured',
-						),
-					),
-				);
-				
-				$query = new WP_Query( $args );
-
-				if ($query->have_posts()) {
-					while ($query->have_posts()) { 
-						$query->the_post();
-						?>
-
-						<div class="slide">
-							<?php get_template_part('templates/product-card'); ?>
-						</div>
-			
-						<?php
-					}
-				}
-
-				wp_reset_postdata();
-				?>
-			</div>
-		</div>
-	</section>
-
-	<?php
-	$brand_two_focus_image = get_field('brand_two_focus_image');
-	if ($brand_two_focus_image) {
-		if (get_field('brand_two_focus_products')) {
-			$products = get_field('brand_two_focus_products');
-			?>
-
-			<section class="focus_section focus_section_two">
-				<div class="container">
-					<div class="section_inner">
-
-						<div class="heading_area_outer">
-							<div class="heading_area">
-								<h2>Brand Name Here</h2>
-								<p class="subhead">Optional sub heading to follow...</p>
-							</div>
-						</div>
-
-						<div class="left_side">
-							<?php echo optimised_image($brand_two_focus_image, 'large'); ?>
-						</div>
-						<div class="right_side">
-							<div class="single_carousel">
-								<?php
-								foreach ($products as $product) {
-									$post = $product['brand_two_focus_product'];
-									setup_postdata($post);
-									
-									get_template_part('templates/product-card');
-								}
-								?>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<?php
-			wp_reset_postdata();
-		}
-	}
-	?>
 
 	<section class="more_ways_to_save_section">
 		<div class="container">
@@ -529,8 +548,6 @@
 		</div>
 	</section>
 
-	<?php get_template_part('templates/usp-banner'); ?>
-
 	<section class="stay_connected_section">
 		<div class="container">
 			<div class="section_inner">
@@ -540,8 +557,6 @@
 						<p class="subhead">Optional sub heading to follow...</p>
 					</div>
 				</div>
-
-				<?php get_template_part('templates/social-media-icons'); ?>
 
 				<div class="left_side">
 					<h4>Mailing List</h4>   
@@ -554,6 +569,8 @@
 					<p>No Need to Keep Checking - We Will Let you Know!</p>
 					<a href="/shop" class="button button-two">Shop Now</a> 
 				</div>
+
+				<?php get_template_part('templates/social-media-icons'); ?>
 			</div>
 		</div>
 	</section>

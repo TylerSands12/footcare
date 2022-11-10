@@ -49,9 +49,9 @@ if ( $product->is_type( 'variable' ) ) {
         <?php echo optimised_image(get_post_thumbnail_id(), 'medium'); ?>
     </a>
 
-    <h4><?php the_title(); ?></h4>
+    <h4 style="display: none !important;"><?php the_title(); ?></h4>
 
-    <div class="price_outer">
+    <div class="price_outer" style="display: none !important;">
         <?php if ( $product->is_type( 'variable' ) ) { ?>
 
             <?php if ($min_sale_price !== $min_regular_price && $max_sale_price !== $max_regular_price) { ?>
@@ -88,6 +88,6 @@ if ( $product->is_type( 'variable' ) ) {
         <?php } ?>
     </div>
 
-    <a href="<?php echo get_permalink(); ?>" class="button button-one">Buy Now</a>
+    <a href="<?php echo get_permalink(); ?>" class="button button-one" style="display: none !important;">Buy Now</a>
     
 </div>

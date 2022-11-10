@@ -80,7 +80,6 @@
                                         width: 100%;
                                         height: 100%;
                                         background: rgba(251, 185, 17, 0.1);
-                                        border-radius: 1rem;
                                     }
             
                                     img {
@@ -96,6 +95,8 @@
                                     position: absolute;
                                     display: flex;
                                     flex-direction: column;
+                                    border-radius: 1rem;
+                                    overflow: hidden;
             
                                     @media (max-width: 767px) {
                                         width: 100%;
@@ -399,6 +400,8 @@
                     color: #fff;
                     padding: 1rem 3rem 1.3rem;
                     border-radius: 1rem;
+                    width: 45rem;
+                    max-width: 100%;
                 }
             }
 
@@ -446,6 +449,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            padding: 0 10rem;
 
             .heading_area {
                 background: $orange;
@@ -453,16 +457,19 @@
                 padding: 1rem 3rem 1.3rem;
                 border-radius: 1rem;
                 margin: 0 0 3rem;
+                width: 45rem;
+                max-width: 100%;
 
                 h2 {
                     color: #fff;
-                    margin: 0 0 .5rem;
+                    margin: 0;
+                    // margin: 0 0 .5rem;
                 }
 
-                p {
-                    color: #fff;
-                    margin: 0;
-                }
+                // p {
+                //     color: #fff;
+                //     margin: 0;
+                // }
             }
 
             .blocks_outer {
@@ -473,7 +480,8 @@
                 flex-wrap: wrap;
         
                 .side_block {
-                    width: 24.25%;
+                    width: 49.5%;
+                    // width: 24.25%;
                     position: relative;
                     display: flex;
                     flex-direction: column;
@@ -490,13 +498,18 @@
                         box-shadow: 0 0 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
                     }
     
-                    &:not(:last-child) {
+                    &:not(:nth-child(even)) {
                         margin-right: 1%;
                     }
+    
+                    // &:not(:last-child) {
+                    //     margin-right: 1%;
+                    // }
     
                     .image_outer {
                         width: 100%;
                         height: 17rem;
+                        // height: 9.5rem;
                         position: relative;
                         border-radius: 1rem;
                         overflow: hidden;
@@ -586,6 +599,8 @@
                     padding: 1rem 3rem 1.3rem;
                     border-radius: 1rem;
                     margin: 0 0 3rem;
+                    width: 45rem;
+                    max-width: 100%;
         
                     h2 {
                         color: #fff;
@@ -757,10 +772,18 @@
 
                 &:nth-of-type(1), &:nth-of-type(2), &:nth-of-type(3) {
                     width: 32.66%;
+
+                    .image_outer {
+                        height: 17rem;
+                    }
                 }
 
                 &:nth-of-type(4), &:nth-of-type(5), &:nth-of-type(6), &:nth-of-type(7) {
                     width: 24.25%;
+                    
+                    .image_outer {
+                        height: 12rem;
+                    }
                 }
 
                 &:nth-of-type(1), &:nth-of-type(2), &:nth-of-type(4), &:nth-of-type(5), &:nth-of-type(6) {
@@ -769,7 +792,6 @@
 
                 .image_outer {
                     width: 100%;
-                    height: 17rem;
                     position: relative;
                     border-radius: 1rem;
                     overflow: hidden;
@@ -884,7 +906,7 @@
                 flex-direction: row;
                 align-items: center;
                 justify-content: center;
-                margin-bottom: 4rem;
+                margin-top: 4rem;
 
                 a {
                     display: flex;
@@ -1023,6 +1045,8 @@
                 padding: 1rem 3rem 1.3rem;
                 border-radius: 1rem;
                 margin: 0 0 3rem;
+                width: 45rem;
+                max-width: 100%;
     
                 h2 {
                     color: #fff;
@@ -1038,6 +1062,108 @@
 
         .carousel {
             padding: 0 10rem;
+        }
+
+        .blocks_outer {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 0 10rem;
+            margin-top: 2.5rem;
+    
+            .side_block {
+                width: 49.5%;
+                // width: 24.25%;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: .5rem;
+                margin-bottom: 1rem;
+                border-radius: 1rem;
+                transition: all .3s ease;
+                border: 1px solid transparent;
+
+                &:hover {
+                    border-color: #a5a5a5;
+                    box-shadow: 0 0 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+                }
+
+                &:not(:nth-child(even)) {
+                    margin-right: 1%;
+                }
+
+                // &:not(:last-child) {
+                //     margin-right: 1%;
+                // }
+
+                .image_outer {
+                    width: 100%;
+                    height: 17rem;
+                    // height: 9.5rem;
+                    position: relative;
+                    border-radius: 1rem;
+                    overflow: hidden;
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(251, 185, 17, 0.1);
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+
+                    .image_overlay {
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: flex-start;
+                        padding: 3rem;
+                        background: rgba(59, 67, 149, 0.16);
+                        z-index: 2;
+
+                        span.header {
+                            display: block;
+                            font-size: 2rem;
+                            font-weight: 700;
+                            color: #fff;
+                            margin: 0;
+                            text-transform: uppercase;
+                        }
+
+                        .button {
+                            margin-top: 2rem;
+                        }
+                    }
+                }
+
+                p.text {
+                    display: block;
+                    width: 100%;
+                    text-align: left;
+                    color: $black;
+                    font-size: 1.4rem;
+                    font-weight: 400;
+                    margin: 0 0 .5rem;
+                }
+            }
         }
     }
 
@@ -1060,6 +1186,8 @@
                     padding: 1rem 3rem 1.3rem;
                     border-radius: 1rem;
                     margin: 0 0 3rem;
+                    width: 45rem;
+                    max-width: 100%;
         
                     h2 {
                         color: #fff;
@@ -1306,6 +1434,8 @@
                     padding: 1rem 3rem 1.3rem;
                     border-radius: 1rem;
                     margin: 0 0 3rem;
+                    width: 45rem;
+                    max-width: 100%;
         
                     h2 {
                         color: #fff;
