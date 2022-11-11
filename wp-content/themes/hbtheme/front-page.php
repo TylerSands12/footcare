@@ -38,7 +38,7 @@
 						$side_blocks = get_field('side_blocks');
 
 						if ($side_blocks) {
-							foreach ($side_blocks as $block) { ?>
+							foreach ($side_blocks as $key => $block) { ?>
 
 							<a href="<?php echo $block['link']; ?>" class="side_block">
 								<?php if ($block['header'] || $block['subheader']) { ?>
@@ -48,10 +48,17 @@
 											<?php echo optimised_image($block['image'], 'full'); ?>
 										<?php } ?>
 									
-										<div class="image_overlay">
-											<span class="header"><?php echo $block['header']; ?></span>
-											<div class="button button-one"><?php echo $block['label']; ?></div>
-										</div>
+										<?php if ($block['header'] || $block['label']) { ?>
+											<div class="image_overlay">
+												<?php if ($block['header']) { ?>
+													<span class="header"><?php echo $block['header']; ?></span>
+												<?php } ?>
+
+												<?php if ($block['label']) { ?>
+													<div class="button button-one"><?php echo $block['label']; ?></div>
+												<?php } ?>
+											</div>
+										<?php } ?>
 									</div>
 
 									<p class="text"><?php echo $block['subheader']; ?></p>
@@ -67,17 +74,25 @@
 								<?php } ?>
 							</a>
 
+							<?php if ($key == 1) {
+								break;
+							}
+							?>
+
 							<?php }
 						} ?>
 					</div>
 				</div>
 
-				<div class="under_banner_blocks">
+				<div class="under_banner_blocks desktop_under_banner_blocks">
 					<?php
-					$under_banner_blocks = get_field('under_banner_blocks');
-
-					if ($under_banner_blocks) {
-						foreach ($under_banner_blocks as $block) { ?>
+					if ($side_blocks) {
+						foreach ($side_blocks as $key => $block) {
+							
+						if ($key == 0 || $key == 1) {
+							continue;
+						}
+						?>
 
 						<a href="<?php echo $block['link']; ?>" class="side_block">
 							<?php if ($block['header'] || $block['subheader']) { ?>
@@ -87,10 +102,61 @@
 										<?php echo optimised_image($block['image'], 'full'); ?>
 									<?php } ?>
 								
-									<div class="image_overlay">
-										<span class="header"><?php echo $block['header']; ?></span>
-										<div class="button button-one"><?php echo $block['label']; ?></div>
+									<?php if ($block['header'] || $block['label']) { ?>
+										<div class="image_overlay">
+											<?php if ($block['header']) { ?>
+												<span class="header"><?php echo $block['header']; ?></span>
+											<?php } ?>
+
+											<?php if ($block['label']) { ?>
+												<div class="button button-one"><?php echo $block['label']; ?></div>
+											<?php } ?>
+										</div>
+									<?php } ?>
+								</div>
+
+								<p class="text"><?php echo $block['subheader']; ?></p>
+
+							<?php } else { ?>
+
+								<?php if ($block['image']) { ?>
+									<div class="image_outer">
+										<?php echo optimised_image($block['image'], 'full'); ?>
 									</div>
+								<?php } ?>
+
+							<?php } ?>
+						</a>
+
+						<?php }
+					} ?>
+				</div>
+
+				<div class="mobile_under_banner_carousel">
+					<?php
+					if ($side_blocks) {
+						foreach ($side_blocks as $key => $block) {
+						?>
+
+						<a href="<?php echo $block['link']; ?>" class="side_block">
+							<?php if ($block['header'] || $block['subheader']) { ?>
+
+								<div class="image_outer">
+									<?php if ($block['image']) { ?>
+										<?php echo optimised_image($block['image'], 'full'); ?>
+									<?php } ?>
+								
+									<?php if ($block['header'] || $block['label']) { ?>
+										<div class="image_overlay">
+											<?php if ($block['header']) { ?>
+												<span class="header"><?php echo $block['header']; ?></span>
+											<?php } ?>
+
+											<?php if ($block['label']) { ?>
+												<div class="button button-one"><?php echo $block['label']; ?></div>
+											<?php } ?>
+										</div>
+									<?php } ?>
 								</div>
 
 								<p class="text"><?php echo $block['subheader']; ?></p>
@@ -477,7 +543,7 @@
 		</div>
 	</section>
 
-	<section class="more_ways_to_save_section">
+	<section class="always_offering_section">
 		<div class="container">
 			<div class="section_inner">
 

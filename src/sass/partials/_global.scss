@@ -66,3 +66,9 @@ body .predictive_results.predictive_results_header ul.predictive_search_results 
         }
     }
 }
+
+// Slick globals
+.slick-disabled {
+    opacity: 0;
+    pointer-events: none;
+}
