@@ -653,7 +653,7 @@
 					</div>
 				</div>
 
-				<div class="blog_cards">
+				<div class="blog_cards home_blog_carousel">
 					<?php
 					$args = array(
 						'post_type' => 'post',
