@@ -3,7 +3,9 @@ $mega_menu = get_field('level_one', 'options')
 ?>
 
 <nav id="main_menu" class="mega_menu">
-    <ul>
+    <ul class="main_menu_ul">
+        <h3>Search by:</h3>
+
         <?php
         foreach ($mega_menu as $key => $level_one_item) { ?>
             <li>
@@ -99,6 +101,28 @@ $mega_menu = get_field('level_one', 'options')
         <li>
             <a href="<?php echo wp_logout_url(); ?>" class="mobile_nav_btn mobile_logout_btn">Sign Out</a>
         </li>
+        <?php } ?>
+    </ul>
+
+    <ul class="mobile_sub_menu">
+        <h3>Help</h3>
+        <?php
+        $footer_menu_one = get_field('footer_menu_one', 'options');
+        foreach ($footer_menu_one as $menu_item) { ?>
+            <li>
+                <a href="<?php echo $menu_item['link']; ?>"><?php echo $menu_item['label']; ?></a>
+            </li>
+        <?php } ?>
+    </ul>
+
+    <ul class="mobile_sub_menu">
+        <h3>Footcare</h3>
+        <?php
+        $footer_menu_three = get_field('footer_menu_three', 'options');
+        foreach ($footer_menu_three as $menu_item) { ?>
+            <li>
+                <a href="<?php echo $menu_item['link']; ?>"><?php echo $menu_item['label']; ?></a>
+            </li>
         <?php } ?>
     </ul>
 </nav>

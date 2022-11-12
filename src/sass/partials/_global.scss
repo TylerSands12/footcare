@@ -23,42 +23,133 @@
 }
 
 // Predictive Search
-body .predictive_results.predictive_results_header ul.predictive_search_results li {
-    &.ac_odd {
-        div.ajax_search_content_title {
-            font-family: "sofia-pro", arial, sans-serif !important;
-        }
+body .predictive_results.predictive_results_header {
+    border: none !important;
+    border-radius: 1rem !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24) !important;
 
-        .ajax_search_content {
-            padding: 1rem;
-
-            .result_row {
-                .rs_content_popup {
-                    p, a, span {
-                        font-family: "sofia-pro", arial, sans-serif !important;
-                    }
-
-                    .rs_name {
-                        font-size: 1rem !important;
-                    }
-
-                    .rs_price {
-                        font-size: .8rem !important;
-
-                        span, bdi {
-                            font-size: .8rem !important;
+    ul.predictive_search_results {
+        >li {
+            &.ac_odd {
+                // Top yellow banner
+                div.ajax_search_content_title {
+                    font-size: 1rem !important;
+                    font-weight: 700 !important;
+                    font-family: "sofia-pro", arial, sans-serif !important;
+                    background: $orange !important;
+                    color: #fff !important;
+                    padding: .5rem 1rem .6rem !important;
+                }
+                
+                // Main products area
+                .ajax_search_content {
+                    padding: 1rem 1rem 0;
+        
+                    .result_row {
+                        .rs_content_popup {
+                            p, a, span {
+                                font-family: "sofia-pro", arial, sans-serif !important;
+                            }
+        
+                            .rs_name {
+                                font-family: "sofia-pro", arial, sans-serif !important;
+                                font-size: 1rem !important;
+                            }
+        
+                            .rs_price {
+                                font-family: "sofia-pro", arial, sans-serif !important;
+                                font-size: .8rem !important;
+        
+                                span, bdi {
+                                    font-family: "sofia-pro", arial, sans-serif !important;
+                                    font-size: .8rem !important;
+                                }
+                            }
+        
+                            .rs_description {
+                                font-family: "sofia-pro", arial, sans-serif !important;
+                                font-size: .8rem !important;
+                            }
+        
+                            .rs_cat {
+                                font-family: "sofia-pro", arial, sans-serif !important;
+                                font-size: .8rem !important;
+                                
+                                a {
+                                    font-family: "sofia-pro", arial, sans-serif !important;
+                                    font-size: .8rem !important;
+                                }
+                            }
                         }
                     }
+                }
 
-                    .rs_description {
-                        font-size: .8rem !important;
+                // Bottom blue banner
+                div.more_result {
+                    background: $darkBlue !important;
+                    display: flex !important;
+                    flex-direction: row !important;
+                    align-items: center !important;
+                    justify-content: center !important;
+                    padding: .5rem 1rem .6rem !important;
+                    margin-top: 1rem !important;
+                    
+                    >span {
+                        display: block !important;
+                        width: auto !important;
+                        font-size: 1rem !important;
+                        font-family: "sofia-pro", arial, sans-serif !important;
+                        color: #fff !important;
+                        margin-right: .5rem !important;
                     }
 
-                    .rs_cat {
-                        font-size: .8rem !important;
-                        
-                        a {
-                            font-size: .8rem !important;
+                    >a {
+                        display: block !important;
+                        width: auto !important;
+                        font-size: 1rem !important;
+                        font-family: "sofia-pro", arial, sans-serif !important;
+                        color: $orange !important;
+                    }
+                }
+            }
+
+            // Turn off hover over effects
+            &.ac_over {
+                .ajax_search_content {
+                    background: none !important;
+                    border-color: none !important;
+        
+                    .result_row {
+                        .rs_content_popup {
+                            p, a, span {
+                                font-family: "sofia-pro", arial, sans-serif !important;
+                                color: #000 !important;
+                            }
+        
+                            .rs_name {
+                                color: $darkBlue !important;
+                                text-decoration: underline !important;
+                            }
+        
+                            .rs_price {
+                                color: #000 !important;
+        
+                                span, bdi {
+                                    color: #000 !important;
+                                }
+                            }
+        
+                            .rs_description {
+                                color: #000 !important;
+                            }
+        
+                            .rs_cat {
+                                color: #000 !important;
+                                
+                                a {
+                                    color: #000 !important;
+                                }
+                            }
                         }
                     }
                 }

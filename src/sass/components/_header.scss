@@ -121,14 +121,14 @@ header {
                     .wc_ps_container {
                         margin: 0 !important;
                         border: 1px solid #ededed !important;
-                        border-radius: 0 !important;
+                        border-radius: 1rem !important;
 
                         .wc_ps_form {
                             .wc_ps_nav_fill {
                                 .wc_ps_nav_field {
                                     input {
-                                        // font-family: "sofia-pro", arial, sans-serif;
-                                        // padding: 1rem !important;
+                                        font-family: "sofia-pro", arial, sans-serif;
+                                        padding: 1rem !important;
                                     }
                                 }
                             }
