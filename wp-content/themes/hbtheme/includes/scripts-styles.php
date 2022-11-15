@@ -16,7 +16,7 @@ add_filter('clean_url', 'add_async_forscript', 11, 1);
 
 // Enqueues scripts and styles
 function theme_scripts() {
-  $version_no = '0.18'; //version for cache busting
+  $version_no = '0.19'; //version for cache busting
 
   // SCRIPTS
   wp_enqueue_script( 'index', get_template_directory_uri() . '/dist/js/main.js#asyncload', null, $version_no, null);
