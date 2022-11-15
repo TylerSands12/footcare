@@ -44,6 +44,48 @@
                     "parent_repeater": "field_62b21de631ce6"
                 },
                 {
+                    "key": "field_637405fdec5e9",
+                    "label": "Mobile Label",
+                    "name": "mobile_label",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_62b21de631ce6"
+                },
+                {
+                    "key": "field_637401c3aa33d",
+                    "label": "Icon",
+                    "name": "icon",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_62b21de631ce6"
+                },
+                {
                     "key": "field_62b21dfb31ce8",
                     "label": "Level Two",
                     "name": "level_two",
@@ -296,5 +338,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1667136424
+    "modified": 1668548102
 }
