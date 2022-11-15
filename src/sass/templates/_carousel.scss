@@ -14,19 +14,16 @@
     svg {
         width: 1rem;
         cursor: pointer;
-
-        @media (max-width: 991px) {
-            position: absolute;
-            z-index: 1;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 2.5rem;
-            height: 2.5rem;
-            padding: .4rem;
-            background: #fff;
-            border: 1px solid $orange;
-            border-radius: 50%;
-        }
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 2.5rem;
+        height: 2.5rem;
+        padding: .4rem;
+        background: #fff;
+        border: 1px solid $orange;
+        border-radius: 50%;
 
         &:hover {
             path {
@@ -40,22 +37,18 @@
         }
         
         &.prev_arrow {
-            @media (max-width: 991px) {
-                left: -0.5rem;
+            left: -0.5rem;
 
-                path {
-                    fill: $orange;
-                }
+            path {
+                fill: $orange;
             }
         }
 
         &.next_arrow {
-            @media (max-width: 991px) {
-                right: -0.5rem;
-                
-                path {
-                    fill: $orange;
-                }
+            right: -0.5rem;
+            
+            path {
+                fill: $orange;
             }
         }
     }

@@ -1627,6 +1627,36 @@
             @media (min-width: 992px) and (max-width: 1399px) {
                 padding: 0 5rem;
             }
+
+            svg {
+                &.prev_arrow {
+                    @media (min-width: 1400px) {
+                        left: 9.5rem;
+                    }
+
+                    @media (min-width: 992px) and (max-width: 1399px) {
+                        left: 4.5rem;
+                    }
+        
+                    path {
+                        fill: $orange;
+                    }
+                }
+        
+                &.next_arrow {
+                    @media (min-width: 1400px) {
+                        right: 9.5rem;
+                    }
+
+                    @media (min-width: 992px) and (max-width: 1399px) {
+                        right: 4.5rem;
+                    }
+                    
+                    path {
+                        fill: $orange;
+                    }
+                }
+            }
         }
 
         .blocks_outer {
