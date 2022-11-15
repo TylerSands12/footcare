@@ -103,6 +103,7 @@
 
                 @media (max-width: 991px) {
                     width: 100%;
+                    margin-top: 3rem;
                 }
 
                 .yith-wcan-filters {
@@ -129,12 +130,47 @@
                 }
 
                 .left_promo_tiles {
+                    @media (max-width: 991px) {
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                    }
+
                     a {
                         width: 100%;
                         display: block;
 
-                        &:not(:last-of-type) {
-                            margin-bottom: 1rem;
+                        @media (min-width: 992px) {
+                            &:not(:last-of-type) {
+                                margin-bottom: 1rem;
+                            }
+                        }
+
+                        @media (min-width: 768px) and (max-width: 991px) {
+                            width: 32.66%;
+
+                            &:not(:last-of-type) {
+                                margin-right: 1%;
+                            }
+                        }
+
+                        @media (min-width: 501px) and (max-width: 767px) {
+                            width: 49.5%;
+
+                            &:not(:nth-of-type(even)) {
+                                margin-right: 1%;
+                            }
+
+                            &:not(:last-of-type) {
+                                margin-bottom: 1%;
+                            }
+                        }
+
+                        @media (max-width: 500px) {
+                            &:not(:last-of-type) {
+                                margin-bottom: 1rem;
+                            }
                         }
 
                         img {
@@ -240,6 +276,10 @@
             font-size: 1.2rem;
             line-height: 1.4;
             text-align: center;
+
+            @media (max-width: 767px) {
+                font-size: 1rem;
+            }
         }
 
         // Sports and Condition landing page styles
@@ -251,7 +291,6 @@
             flex-wrap: wrap;
     
             .side_block {
-                width: 49.5%;
                 position: relative;
                 display: flex;
                 flex-direction: column;
@@ -263,13 +302,21 @@
                 transition: all .3s ease;
                 border: 1px solid transparent;
 
+                @media (min-width: 501px) {
+                    width: 49.5%;
+
+                    &:not(:nth-child(even)) {
+                        margin-right: 1%;
+                    }
+                }
+
+                @media (max-width: 500px) {
+                    width: 100%;
+                }
+
                 &:hover {
                     border-color: #a5a5a5;
                     box-shadow: 0 0 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-                }
-
-                &:not(:nth-child(even)) {
-                    margin-right: 1%;
                 }
 
                 .image_outer {
