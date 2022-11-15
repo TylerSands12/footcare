@@ -73,14 +73,6 @@ nav#main_menu {
                 //     }
                 // }
 
-                &:not(.mobile_login_btn) {
-                    width: 49%;
-                }
-
-                &.mobile_login_btn {
-                    width: 100%;
-                }
-
                 &.sale {
                     >span, >a {
                         span.mobile_icon {
@@ -111,6 +103,16 @@ nav#main_menu {
                             color: $orange;
                         }
                     }
+                }
+            }
+
+            @media (min-width: 501px) and (max-width: 991px) {
+                &:not(.mobile_login_btn) {
+                    width: 49%;
+                }
+
+                &.mobile_login_btn {
+                    width: 100%;
                 }
             }
 
