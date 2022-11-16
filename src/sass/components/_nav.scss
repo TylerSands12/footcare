@@ -20,7 +20,6 @@ nav#main_menu {
         flex-direction: column !important;
         background: #fff;
         z-index: 999;
-        padding: 1rem 0;
 
         &.active {
             display: flex;
@@ -44,7 +43,7 @@ nav#main_menu {
             flex-direction: row !important;
             align-items: flex-start !important;
             flex-wrap: wrap;
-            padding: 0;
+            padding: .5rem 0 0;
         }
 
         >li {
@@ -67,11 +66,11 @@ nav#main_menu {
             @media (max-width: 991px) {
                 cursor: pointer;
               
-                // &:hover {
-                //     >ul {
-                //         display: flex !important;
-                //     }
-                // }
+                &.active {
+                    >ul {
+                        display: flex !important;
+                    }
+                }
 
                 &.sale {
                     >span, >a {
@@ -107,11 +106,12 @@ nav#main_menu {
             }
 
             @media (min-width: 501px) and (max-width: 991px) {
-                &:not(.mobile_login_btn) {
+                &:not(.mobile_login_btn):not(.shop_by_button.active) {
                     width: 49%;
                 }
 
-                &.mobile_login_btn {
+                &.mobile_login_btn,
+                &.shop_by_button.active {
                     width: 100%;
                 }
             }
@@ -135,7 +135,7 @@ nav#main_menu {
                     flex-direction: row;
                     align-items: center;
                     justify-content: flex-start;
-                    padding: 1rem 2rem !important;
+                    padding: .5rem 1rem !important;
                 }
 
                 >.mobile_icon {
@@ -176,18 +176,24 @@ nav#main_menu {
                 display: none;
                 align-items: center;
                 justify-content: center;
-                background: #3b4395;
+                position: absolute;
             
                 @media (min-width: 992px) {
-                    position: absolute;
                     flex-direction: row;
                     top: 100%;
                     left: 0;
+                    background: #3b4395;
                 }
 
                 @media (max-width: 991px) {
                     width: 100%;
                     flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    top: 0;
+                    height: 100%;
+                    padding: .5rem 0 0;
+                    background: #fff;
                 }
 
                 >li {
@@ -201,32 +207,71 @@ nav#main_menu {
                                 display: flex;
                             }
                         }
+
+                        &.back_to_main_menu {
+                            display: none;
+                        }
                     }
 
                     @media (max-width: 991px) {
                         width: 100%;
                         cursor: pointer;
     
-                        // &:hover {
-                        //     >.mega_menu_popout {
-                        //         display: flex !important;
-                        //     }
-                        // }
+                        &.active {
+                            >.mega_menu_popout {
+                                display: flex !important;
+                            }
+                        }
+
+                        &.back_to_main_menu {
+                            background: $orange;
+                            margin: -.5rem 0 1rem;
+                            padding: .25rem 0;
+                            cursor: pointer;
+
+                            >span {
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-content: flex-start;
+                                padding: 0.5rem 1rem !important;
+
+                                .mobile_icon {
+                                    margin-top: 0.09rem;
+                                    margin-bottom: -0.09rem;
+                                    margin-right: 0.6rem;
+    
+                                    svg {
+                                        width: 1.25rem;
+
+                                        path {
+                                            fill: #fff;
+                                        }
+                                    }
+                                }
+    
+                                .mobile_shop_by {
+                                    margin-right: 0.25rem;
+                                    color: #fff;
+                                    font-weight: 700;
+                                }
+                            }
+                        }
                     }
 
                     >span {
                         display: block;
                         padding: 1.5rem;
                         cursor: pointer;
-                        color: #fff;
                         transition: all .3s ease;
 
                         @media (min-width: 992px) {
                             text-transform: uppercase;
+                            color: #fff;
                         }
 
                         @media (max-width: 991px) {
-                            padding: 1rem 2rem !important;
+                            padding: .5rem 1rem .7rem 1.85rem !important
                         }
                     }
 
@@ -236,13 +281,13 @@ nav#main_menu {
                         justify-content: center;
                         background: #F5F5F5;
                         padding: 2rem;
+                        position: absolute;
             
                         @media (min-width: 992px) {
                             width: 1200px;
                             height: 21rem;
                             max-width: 100%;
                             transform: translate(-50%, 0%);
-                            position: absolute;
                             flex-direction: row;
                             top: 100%;
                             left: 50%;
@@ -251,7 +296,13 @@ nav#main_menu {
 
                         @media (max-width: 991px) {
                             width: 100%;
-                            padding: 1rem 2rem !important;
+                            flex-direction: column;
+                            align-items: flex-start;
+                            justify-content: flex-start;
+                            top: 0;
+                            height: 100%;
+                            padding: .5rem 0 0;
+                            background: #fff;
                         }
 
                         >.column {
@@ -302,6 +353,10 @@ nav#main_menu {
                                     margin-top: 1.5rem !important;
                                 }
 
+                                @media (max-width: 991px) {
+                                    padding: 0.5rem 1rem 0.7rem 1.85rem !important;
+                                }
+
                                 span {
                                     font-weight: 700 !important;
 
@@ -333,10 +388,16 @@ nav#main_menu {
                                         &:hover {
                                             text-decoration: underline;
                                         }
+
+                                        @media (max-width: 991px) {
+                                            padding: 0.5rem 1rem 0.7rem 1.85rem !important;
+                                        }
                                     }
 
                                     &.link {
-                                        margin-bottom: .5rem !important;
+                                        @media (min-width: 992px) {
+                                            margin-bottom: .5rem !important;
+                                        }
                                         
                                         span {
                                             font-weight: 400;
@@ -350,6 +411,64 @@ nav#main_menu {
                                             }
                                         }
                                     }
+
+                                    &.back_to_first_level {
+                                        cursor: pointer;
+                                        background: $darkBlue;
+                                        margin: -.5rem 0 1rem;
+                                        padding: .25rem 0;
+
+                                        @media (min-width: 992px) {
+                                            display: none;
+                                        }
+
+                                        @media (max-width: 991px) {
+                                            >span {
+                                                display: flex;
+                                                flex-direction: row;
+                                                align-items: center;
+                                                justify-content: flex-start;
+                                                padding: 0.5rem 1rem !important;
+                
+                                                .mobile_icon {
+                                                    margin-top: 0.09rem;
+                                                    margin-bottom: -0.09rem;
+                                                    margin-right: 0.6rem;
+                    
+                                                    svg {
+                                                        width: 1.25rem;
+                
+                                                        path {
+                                                            fill: $orange;
+                                                        }
+                                                    }
+                                                }
+                    
+                                                .mobile_shop_by {
+                                                    margin-right: 0.25rem;
+                                                    color: $orange;
+                                                    font-weight: 700;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &.links_header_mobile {
+                                        padding: 0.5rem 1rem 0.7rem 1.85rem !important;
+
+                                        span {
+                                            font-weight: 700;
+                                            font-size: 1.2rem;
+                                        }
+
+                                        @media (max-width: 991px) {
+                                            display: block;
+                                        }
+
+                                        @media (min-width: 992px) {
+                                            display: none;
+                                        }
+                                    }
                                 }
                             }
 
@@ -361,13 +480,28 @@ nav#main_menu {
                             }
                         }
                     }
+
+                    &.links_header_mobile {
+                        span {
+                            font-weight: 700;
+                            font-size: 1.2rem;
+                        }
+
+                        @media (max-width: 991px) {
+                            display: block;
+                        }
+
+                        @media (min-width: 992px) {
+                            display: none;
+                        }
+                    }
                 }
             }
         }
 
         .mobile_nav_separator_outer {
             width: 100%;
-            padding: 0 2rem;
+            padding: 0 1rem;
     
             @media (min-width: 992px) {
                 display: none;

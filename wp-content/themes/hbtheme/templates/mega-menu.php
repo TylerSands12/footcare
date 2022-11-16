@@ -12,12 +12,25 @@ $mega_menu = get_field('level_one', 'options')
                 <hr class="mobile_nav_separator"></hr>
             </div>
             <?php } ?>
-            <li class="<?php echo str_replace(' ', '_', strtolower($level_one_item['label'])); ?>">
+            <li class="<?php echo str_replace(' ', '_', strtolower($level_one_item['label'])); ?> <?php if ($level_one_item['mobile_label'] !== "On Sale") { ?>shop_by_button<?php } ?>">
                 <span><span class="mobile_icon"><?php echo $level_one_item['icon']; ?></span><span class="mobile_shop_by"><?php echo $level_one_item['mobile_label']; ?></span><span class="desktop_shop_by"><?php echo $level_one_item['label']; ?></span></span>
 
                 <?php if ($level_one_item['level_two']) { ?>
                     
                     <ul>
+                        <li class="back_to_main_menu">
+                            <span>
+                                <span class="mobile_icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+                                </span>
+                                <span class="mobile_shop_by">Back to Main Menu</span>
+                            </span>
+                        </li>
+
+                        <li class="link links_header_mobile">
+                            <span><?php echo $level_one_item['label']; ?></span>
+                        </li>
+
                         <?php foreach ($level_one_item['level_two'] as $key => $level_two_item) { ?>
                             <li>
                                 <?php if ($level_two_item['label']) { ?>
@@ -45,6 +58,19 @@ $mega_menu = get_field('level_one', 'options')
                                                         <?php } ?>
 
                                                         <ul class="links">
+                                                            <li class="link back_to_first_level">
+                                                                <span>
+                                                                    <span class="mobile_icon">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+                                                                    </span>
+                                                                    <span class="mobile_shop_by">Back to <?php echo $level_one_item['label']; ?></span>
+                                                                </span>
+                                                            </li>
+
+                                                            <li class="link links_header_mobile">
+                                                                <span><?php echo $level_two_item['label']; ?></span>
+                                                            </li>
+
                                                             <?php if ($column['links']) {
                                                                 foreach ($column['links'] as $key => $link) { ?>
                                                                     <?php if ($link['product_category']) { ?>
