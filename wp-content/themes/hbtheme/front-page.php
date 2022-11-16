@@ -208,6 +208,52 @@
 	</section>
 	<?php } ?>
 
+	<div class="container">
+		<div class="mobile_under_banner_carousel">
+			<?php
+			if ($side_blocks) {
+				foreach ($side_blocks as $key => $block) {
+				?>
+
+				<a href="<?php echo $block['link']; ?>" class="side_block">
+					<?php if ($block['header'] || $block['subheader']) { ?>
+
+						<div class="image_outer">
+							<?php if ($block['image']) { ?>
+								<?php echo optimised_image($block['image'], 'full'); ?>
+							<?php } ?>
+						
+							<?php if ($block['header'] || $block['label']) { ?>
+								<div class="image_overlay">
+									<?php if ($block['header']) { ?>
+										<span class="header"><?php echo $block['header']; ?></span>
+									<?php } ?>
+
+									<?php if ($block['label']) { ?>
+										<div class="button button-one"><?php echo $block['label']; ?></div>
+									<?php } ?>
+								</div>
+							<?php } ?>
+						</div>
+
+						<p class="text"><?php echo $block['subheader']; ?></p>
+
+					<?php } else { ?>
+
+						<?php if ($block['image']) { ?>
+							<div class="image_outer">
+								<?php echo optimised_image($block['image'], 'full'); ?>
+							</div>
+						<?php } ?>
+
+					<?php } ?>
+				</a>
+
+				<?php }
+			} ?>
+		</div>
+	</div>
+
 	<section class="explore_more_ways_section">
 		<div class="container">
 			<div class="section_inner">

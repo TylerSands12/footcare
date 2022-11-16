@@ -1,12 +1,12 @@
-<div class="category_card">
+<a href="<?php echo get_term_link($category['category']); ?>" class="category_card">
 
     <?php
     $wc_thumbnail_id = get_woocommerce_term_meta( $category['category']->term_id, 'thumbnail_id', true );
     ?>
 
-    <a href="<?php echo get_term_link($category['category']); ?>" class="image_outer">
+    <div class="image_outer">
         <?php echo optimised_image($wc_thumbnail_id, 'medium'); ?>
-    </a>
+    </div>
 
     <h4><?php echo $category['category']->name; ?></h4>
 
@@ -14,4 +14,4 @@
         <p class="excerpt"><?php echo wp_trim_words( get_the_excerpt(), 20, '...' ); ?></p>
     <?php } ?>
     
-</div>
+</a>

@@ -22,6 +22,10 @@ header {
         a.logo {
             display: inline-block;
             padding: 1rem 0;
+
+            @media (max-width: 991px) {
+                margin-left: .5rem;
+            }
     
             img {
                 width: 200px;
@@ -69,22 +73,6 @@ header {
                 }
             }
 
-            &:not(.active):hover {
-                span {
-                    &:nth-child(1) {
-                        top: 14.666666666666666px;
-                    }
-    
-                    &:nth-child(2) {
-                        top: 25.333333333333332px;
-                    }
-    
-                    &:nth-child(3) {
-                        top: 36px;
-                    }
-                }
-            }
-
             &.active {
                 span {
                     transition: 0.15s top ease-out, 0.15s width ease-out, 0.15s transform 0.15s ease-out, 0.15s -webkit-transform 0.15s ease-out;
@@ -127,7 +115,8 @@ header {
                             .wc_ps_nav_fill {
                                 .wc_ps_nav_field {
                                     input {
-                                        font-family: "sofia-pro", arial, sans-serif;
+                                        font-family: "sofia-pro", arial, sans-serif !important;
+                                        font-size: 1rem !important;
                                         padding: 1rem !important;
                                     }
                                 }
@@ -189,10 +178,24 @@ header {
                     }
 
                     div.wc_ps_container {
+                        width: 100% !important;
                         visibility: visible !important;
                         height: auto !important;
                         position: relative !important;
                         border: 1px solid #cdcdcd !important;
+                        border-radius: 1rem !important;
+
+                        .wc_ps_form {
+                            .wc_ps_nav_fill {
+                                .wc_ps_nav_field {
+                                    input {
+                                        font-family: "sofia-pro", arial, sans-serif !important;
+                                        font-size: 1rem !important;
+                                        padding: 1rem !important;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
