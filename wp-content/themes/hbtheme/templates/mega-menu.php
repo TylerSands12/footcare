@@ -45,61 +45,58 @@ $mega_menu = get_field('level_one', 'options')
 
                                             <div class="column">
                                                 <?php if ($column['type_of_column'] == "links") { ?>
-                                                    <?php if ($column['links']) { ?>
 
-                                                        <?php if ($level_two_item['product_category']) { ?>
-                                                            <a class="links_header" href="<?php echo get_term_link($level_two_item['product_category']); ?>">
-                                                                <span><?php echo $level_two_item['label']; ?></span>
-                                                            </a>
-                                                        <?php } else { ?>
-                                                            <a class="links_header" href="#">
-                                                                <span><?php echo $level_two_item['label']; ?></span>
-                                                            </a>
-                                                        <?php } ?>
-
-                                                        <ul class="links">
-                                                            <li class="link back_to_first_level">
-                                                                <span>
-                                                                    <span class="mobile_icon">
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
-                                                                    </span>
-                                                                    <span class="mobile_shop_by">Back to <?php echo $level_one_item['label']; ?></span>
-                                                                </span>
-                                                            </li>
-
-                                                            <li class="link links_header_mobile">
-                                                                <span><?php echo $level_two_item['label']; ?></span>
-                                                            </li>
-
-                                                            <?php if ($column['links']) {
-                                                                foreach ($column['links'] as $key => $link) { ?>
-                                                                    <?php if ($link['product_category']) { ?>
-                                                                        <li class="link">
-                                                                            <a href="<?php echo get_term_link($link['product_category']); ?>">
-                                                                                <span><?php echo $link['label']; ?></span>
-                                                                            </a>
-                                                                        </li>
-                                                                    <?php } else { ?>
-                                                                        <li class="link">
-                                                                            <a href="#">
-                                                                                <span><?php echo $link['label']; ?></span>
-                                                                            </a>
-                                                                        </li>
-                                                                    <?php } ?>
-                                                                <?php }
-                                                            } ?>
-                                                        </ul>
-
-                                                        <?php if ($level_two_item['product_category']) { ?>
-                                                            <a class="links_view_all" href="<?php echo get_term_link($level_two_item['product_category']); ?>">
-                                                                <span>View All</span>
-                                                            </a>
-                                                        <?php } else { ?>
-                                                            <a class="links_view_all" href="#">
-                                                                <span>View All</span>
-                                                            </a>
-                                                        <?php } ?>
+                                                    <?php if ($level_two_item['product_category']) { ?>
+                                                        <a class="links_header" href="<?php echo get_term_link($level_two_item['product_category']); ?>">
+                                                            <span><?php echo $level_two_item['label']; ?></span>
+                                                        </a>
+                                                    <?php } else { ?>
+                                                        <a class="links_header" href="#">
+                                                            <span><?php echo $level_two_item['label']; ?></span>
+                                                        </a>
                                                     <?php } ?>
+
+                                                    <ul class="links">
+                                                        <li class="link back_to_first_level">
+                                                            <span>
+                                                                <span class="mobile_icon">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+                                                                </span>
+                                                                <span class="mobile_shop_by">Back to <?php echo $level_one_item['label']; ?></span>
+                                                            </span>
+                                                        </li>
+
+                                                        <li class="link links_header_mobile">
+                                                            <span><?php echo $level_two_item['label']; ?></span>
+                                                        </li>
+
+                                                        <?php
+                                                        // Get all subcategories of the parent
+                                                        $args_query = array(
+                                                            'taxonomy' => 'product_cat', 
+                                                            'hide_empty' => false, 
+                                                            'child_of' => $level_two_item['product_category']->term_id
+                                                        );
+
+                                                        foreach (get_terms($args_query) as $term) { ?>
+                                                            <li class="link">
+                                                                <a href="<?php echo get_term_link($term->term_id); ?>">
+                                                                    <span><?php echo $term->name; ?></span>
+                                                                </a>
+                                                            </li>
+                                                        <?php } ?>
+                                                    </ul>
+
+                                                    <?php if ($level_two_item['product_category']) { ?>
+                                                        <a class="links_view_all" href="<?php echo get_term_link($level_two_item['product_category']); ?>">
+                                                            <span>View All</span>
+                                                        </a>
+                                                    <?php } else { ?>
+                                                        <a class="links_view_all" href="#">
+                                                            <span>View All</span>
+                                                        </a>
+                                                    <?php } ?>
+                                                    
                                                 <?php } ?>
 
                                                 <?php if ($column['type_of_column'] == "image") { ?>

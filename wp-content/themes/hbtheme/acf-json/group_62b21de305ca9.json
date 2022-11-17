@@ -164,11 +164,12 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "collapsed": "",
+                            "layout": "table",
                             "min": 0,
                             "max": 0,
-                            "layout": "table",
+                            "collapsed": "",
                             "button_label": "Add Column",
+                            "rows_per_page": 20,
                             "sub_fields": [
                                 {
                                     "key": "field_62b21fa283d36",
@@ -195,83 +196,6 @@
                                     "return_format": "value",
                                     "ajax": 0,
                                     "placeholder": "",
-                                    "parent_repeater": "field_62b21f610deaf"
-                                },
-                                {
-                                    "key": "field_62b21fb683d37",
-                                    "label": "Links",
-                                    "name": "links",
-                                    "aria-label": "",
-                                    "type": "repeater",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": [
-                                        [
-                                            {
-                                                "field": "field_62b21fa283d36",
-                                                "operator": "==",
-                                                "value": "links"
-                                            }
-                                        ]
-                                    ],
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "collapsed": "",
-                                    "min": 0,
-                                    "max": 0,
-                                    "layout": "table",
-                                    "button_label": "Add Link",
-                                    "sub_fields": [
-                                        {
-                                            "key": "field_635e7b9b602d2",
-                                            "label": "Label",
-                                            "name": "label",
-                                            "aria-label": "",
-                                            "type": "text",
-                                            "instructions": "",
-                                            "required": 0,
-                                            "conditional_logic": 0,
-                                            "wrapper": {
-                                                "width": "",
-                                                "class": "",
-                                                "id": ""
-                                            },
-                                            "default_value": "",
-                                            "maxlength": "",
-                                            "placeholder": "",
-                                            "prepend": "",
-                                            "append": "",
-                                            "parent_repeater": "field_62b21fb683d37"
-                                        },
-                                        {
-                                            "key": "field_62b21fbe83d38",
-                                            "label": "Product Category",
-                                            "name": "product_category",
-                                            "aria-label": "",
-                                            "type": "taxonomy",
-                                            "instructions": "",
-                                            "required": 0,
-                                            "conditional_logic": 0,
-                                            "wrapper": {
-                                                "width": "",
-                                                "class": "",
-                                                "id": ""
-                                            },
-                                            "taxonomy": "product_cat",
-                                            "field_type": "select",
-                                            "allow_null": 0,
-                                            "add_term": 0,
-                                            "save_terms": 0,
-                                            "load_terms": 0,
-                                            "return_format": "object",
-                                            "multiple": 0,
-                                            "parent_repeater": "field_62b21fb683d37"
-                                        }
-                                    ],
-                                    "rows_per_page": 20,
                                     "parent_repeater": "field_62b21f610deaf"
                                 },
                                 {
@@ -309,7 +233,6 @@
                                     "parent_repeater": "field_62b21f610deaf"
                                 }
                             ],
-                            "rows_per_page": 20,
                             "parent_repeater": "field_62b21dfb31ce8"
                         }
                     ],
@@ -338,5 +261,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1668548102
+    "modified": 1668722635
 }

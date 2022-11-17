@@ -3,23 +3,6 @@
     "title": "Product Category",
     "fields": [
         {
-            "key": "field_6373edc1f4b4e",
-            "label": "Product Category Fields",
-            "name": "",
-            "aria-label": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "left",
-            "endpoint": 0
-        },
-        {
             "key": "field_634d3a36a5f1b",
             "label": "Category Icon",
             "name": "category_icon",
@@ -140,25 +123,8 @@
             "rows_per_page": 20
         },
         {
-            "key": "field_6373edd1f4b4f",
-            "label": "Sports and Conditions Fields",
-            "name": "",
-            "aria-label": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "left",
-            "endpoint": 0
-        },
-        {
             "key": "field_6373ee72f2842",
-            "label": "Blocks",
+            "label": "Sports and Conditions Blocks",
             "name": "sports_conditions_blocks",
             "aria-label": "",
             "type": "repeater",
@@ -328,5 +294,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1668543308
+    "modified": 1668721140
 }
